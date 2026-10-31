@@ -41,6 +41,8 @@ Set before measuring:
 | `scripts/05b-bot-demo.mjs` | `results/bot/demo-<date>.jsonl` | Runs the bot live on the panels you name and prints what it would post. |
 | `scripts/05c-alert-in-prompt.mjs` | `results/alert-in-prompt/`, `results/alert-in-prompt.md` | Puts the alert of another panel into the prompt. Does the model copy it? |
 | `scripts/06-wrong-screenshot.mjs` | `results/wrong-screenshot.md` | Breaks it on purpose: checks each read against the alert of another panel. No API calls. |
+| `scripts/07-billing-snapshot.mjs` | `results/billing-<label>.json` | Optional. Saves the billed token lines of the tested models from the invoice preview, or from a closed invoice (`after 2026-10`). Needs `DO_BILLING_TOKEN` with billing read access. |
+| `scripts/08-bill-check.mjs` | `results/bill-check.md` | Compares the tokens every recorded call reported with the change in the billed lines between two snapshots. |
 
 ## Tolerances
 
@@ -91,7 +93,7 @@ The whole test, including probes and the live demo, came to about $1.12 at list 
 - These are not real Grafana screenshots, and each panel has one clear peak and no legend values.
 - 100 panels give wide intervals. Each feature row covers 17 to 36 panels.
 - One prompt, no JSON response mode, temperature 0, the models DigitalOcean served on 31 October 2026.
-- Prices come from list prices and reported token counts, not an invoice. DigitalOcean lists no separate image rate for these models, so we assume the image tokens inside `prompt_tokens` are billed at the input rate.
+- Prices come from list prices and reported token counts. DigitalOcean lists no separate image rate for these models, so we assume the image tokens inside `prompt_tokens` are billed at the input rate. The bill check against the October 2026 invoice is pending: `results/billing-before.json` is the invoice preview before the runs (last updated 06:19 UTC on 31 October, before the first call at 09:15 UTC).
 - Our account gets HTTP 403 for the GPT models on DigitalOcean, so only open-weight models are in the test (`results/model-access/2026-10-31.txt`).
 
 ## Write-up

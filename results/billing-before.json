@@ -1,0 +1,63 @@
+{
+  "takenAt": "2026-10-31T10:22:59.033Z",
+  "source": "invoice preview",
+  "updatedAt": "2026-10-31T06:19:40Z",
+  "lines": [
+    {
+      "model": "Llama 4 Maverick",
+      "kind": "Output",
+      "tokens": 16072,
+      "perThousand": 0.00087,
+      "amount": 0.01
+    },
+    {
+      "model": "Llama 4 Maverick",
+      "kind": "Input",
+      "tokens": 1210401,
+      "perThousand": 0.00025,
+      "amount": 0.3
+    },
+    {
+      "model": "Llama 4 Maverick",
+      "kind": "Cache Read Input",
+      "tokens": 2176896,
+      "perThousand": 0.00005,
+      "amount": 0.11
+    },
+    {
+      "model": "Qwen3.8-Max",
+      "kind": "Output",
+      "tokens": 41980,
+      "perThousand": 0.006,
+      "amount": 0.25
+    },
+    {
+      "model": "Qwen3.8-Max",
+      "kind": "Input",
+      "tokens": 416584,
+      "perThousand": 0.002,
+      "amount": 0.83
+    },
+    {
+      "model": "Qwen3.8-Max",
+      "kind": "Cache Read Input",
+      "tokens": 478720,
+      "perThousand": 0.0002,
+      "amount": 0.1
+    },
+    {
+      "model": "Gemma 4",
+      "kind": "Output",
+      "tokens": 4,
+      "perThousand": 0.0005,
+      "amount": 0.01
+    },
+    {
+      "model": "Gemma 4",
+      "kind": "Input",
+      "tokens": 31,
+      "perThousand": 0.00018,
+      "amount": 0.01
+    }
+  ]
+}
