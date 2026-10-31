@@ -4,7 +4,8 @@
 // scorer marks any of the four facts wrong, or the model gave no answer.
 // Writes results/crosscheck.json and results/crosscheck.md.
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
-import { runStamp, readStamped } from '../lib/stamp.mjs';
+import { runStamp } from '../lib/stamp.mjs';
+import { readConfigRecords } from '../lib/records.mjs';
 import { scoreAnswer } from '../lib/score.mjs';
 import { crossCheck } from '../lib/bot.mjs';
 import { CONFIGS } from '../lib/configs.mjs';
@@ -24,7 +25,7 @@ md.push('| configuration | tolerance | reads | wrong reads | caught | missed | r
 
 for (const f of files) {
   const id = f.replace('.jsonl', '');
-  const recs = readStamped(`${ROOT}results/raw/${f}`, STAMP);
+  const recs = readConfigRecords(`${ROOT}results/raw/${f}`, STAMP, f.replace('.jsonl', ''));
   const calls = new Map();
   for (const r of recs) {
     const k = `${r.panel}#${r.run}`;

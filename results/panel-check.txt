@@ -1,2 +1,3 @@
 checked 100 panels from the drawn SVG; problems: 0
 largest peak read-back error: p097 0.011%
+top series checked from line colours on 81 line panels and from band heights on 19 stacked panels

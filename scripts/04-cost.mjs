@@ -6,7 +6,8 @@
 // same question with no image (the stage 0 text-only call).
 // Writes results/cost.md and results/cost.json.
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
-import { runStamp, readStamped } from '../lib/stamp.mjs';
+import { runStamp } from '../lib/stamp.mjs';
+import { readConfigRecords } from '../lib/records.mjs';
 import { PRICES } from '../lib/cost.mjs';
 import { CONFIGS } from '../lib/configs.mjs';
 
@@ -27,7 +28,7 @@ md.push('| configuration | calls | input $/1M | output $/1M | mean prompt tokens
 const bySize = {};
 for (const f of files) {
   const id = f.replace('.jsonl', '');
-  const all = readStamped(`${ROOT}results/raw/${f}`, STAMP).filter((r) => r.ok && r.usage);
+  const all = readConfigRecords(`${ROOT}results/raw/${f}`, STAMP, f.replace('.jsonl', '')).filter((r) => r.ok && r.usage);
   const recs = all.filter((r) => r.run === 1);
   const cachedLater = all.filter((r) => r.run > 1).map((r) => r.usage.prompt_tokens_details?.cached_tokens ?? 0);
   const model = recs[0].model;

@@ -21,6 +21,7 @@ const attr = (tag, name) => {
 
 const problems = [];
 const rows = [];
+let stackedChecked = 0;
 truths.forEach((t, i) => {
   const panel = makePanel(i);
   const svg = renderSvg(panel);
@@ -92,6 +93,21 @@ truths.forEach((t, i) => {
   if (!t.stacked) {
     const name = legend.find((g) => g.colour === best.colour)?.name;
     if (name !== t.topSeries) problems.push(`${t.id}: highest drawn line is ${name}, truth ${t.topSeries}`);
+  } else {
+    // Stacked: at the column of the drawn peak, each band's own height is its
+    // upper line minus the line below it. The thickest band, mapped through the
+    // legend by its line colour, must be the truth's top series.
+    const k = polylines[polylines.length - 1].pts.findIndex(([x, y]) => x === best.x && y === best.y);
+    let below = 0;
+    let thick = null;
+    for (const pl of polylines) {
+      const v = valueAt(pl.pts[k][1]);
+      if (!thick || v - below > thick.h) thick = { h: v - below, colour: pl.colour };
+      below = v;
+    }
+    const name = legend.find((g) => g.colour === thick.colour)?.name;
+    stackedChecked++;
+    if (name !== t.topSeries) problems.push(`${t.id}: thickest drawn band at the peak is ${name}, truth ${t.topSeries}`);
   }
 
   // Threshold: the dashed line or the top of the red region.
@@ -116,6 +132,7 @@ truths.forEach((t, i) => {
 const out = [`checked ${truths.length} panels from the drawn SVG; problems: ${problems.length}`, ...problems];
 const worst = [...rows].sort((a, b) => b.relErr - a.relErr)[0];
 out.push(`largest peak read-back error: ${worst.id} ${(worst.relErr * 100).toFixed(3)}%`);
+out.push(`top series checked from line colours on ${truths.length - stackedChecked} line panels and from band heights on ${stackedChecked} stacked panels`);
 writeFileSync(`${ROOT}results/panel-check.txt`, out.join('\n') + '\n');
 console.log(out.join('\n'));
 if (problems.length) process.exit(1);

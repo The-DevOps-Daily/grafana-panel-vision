@@ -4,7 +4,7 @@ Tolerances: peak value within 5% (after unit conversion), peak time within 5% of
 
 ## Run 1, 100 panels
 
-| configuration | all four right | 95% CI | peak value | peak time | threshold | top series | non-answers | $ per 1,000 | p50 latency | p95 latency |
+| configuration | all four right | 95% CI | peak value | peak time | threshold | top series | non-answers | $ per 1,000 | p50 latency (all runs) | p95 latency (all runs) |
 |---|---|---|---|---|---|---|---|---|---|---|
 | nemotron-3.5-super-vl | 48/100 | 38.5-57.7% | 69 | 96 | 91 | 75 | 0 | 0.258 | 1.4 s | 1.8 s |
 | nemotron-3.5-super-vl+reasoning | 54/100 | 44.3-63.4% | 71 | 94 | 96 | 80 | 0 | 2.372 | 19.0 s | 58.5 s |
@@ -13,7 +13,7 @@ Tolerances: peak value within 5% (after unit conversion), peak time within 5% of
 | llama-4-maverick | 21/100 | 14.2-30% | 34 | 89 | 86 | 81 | 0 | 0.283 | 2.7 s | 9.1 s |
 | nemotron-3.5-super-vl+reasoning-t0.6 | 19/34 | 39.5-71.1% | 24 | 33 | 32 | 30 | 0 | 2.007 | 21.2 s | 39.3 s |
 
-Non-answers count as wrong in "all four right". Latency is the attempt that succeeded; retried attempts are counted below, not timed.
+Accuracy and cost are run 1. Latency covers every successful call in all runs, and is the attempt that succeeded; retried attempts are counted below, not timed. Non-answers count as wrong in "all four right".
 
 ## By panel feature, run 1 (all four right)
 

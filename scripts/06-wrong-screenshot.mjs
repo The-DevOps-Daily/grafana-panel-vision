@@ -5,7 +5,8 @@
 // time. No API calls; re-uses stage 2 answers.
 // Writes results/wrong-screenshot.md.
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
-import { runStamp, readStamped } from '../lib/stamp.mjs';
+import { runStamp } from '../lib/stamp.mjs';
+import { readConfigRecords } from '../lib/records.mjs';
 import { crossCheck } from '../lib/bot.mjs';
 import { formatValue } from '../lib/units.mjs';
 
@@ -28,7 +29,7 @@ const md = ['# Wrong screenshot attached to the alert', '', `Stamp ${STAMP}. Run
 const examples = [];
 for (const f of readdirSync(`${ROOT}results/raw`).filter((x) => x.endsWith('.jsonl'))) {
   const id = f.replace('.jsonl', '');
-  const recs = readStamped(`${ROOT}results/raw/${f}`, STAMP).filter((r) => r.run === 1);
+  const recs = readConfigRecords(`${ROOT}results/raw/${f}`, STAMP, f.replace('.jsonl', '')).filter((r) => r.run === 1);
   const last = new Map();
   for (const r of recs) if (!last.get(r.panel)?.ok) last.set(r.panel, r);
   let flagged = 0;

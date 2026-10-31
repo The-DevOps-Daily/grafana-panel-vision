@@ -3,7 +3,8 @@
 // code or inputs. Writes results/summary.json, results/summary.md and
 // results/failures.json (the worst misses, with the panel PNG paths).
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
-import { runStamp, readStamped } from '../lib/stamp.mjs';
+import { runStamp } from '../lib/stamp.mjs';
+import { readConfigRecords } from '../lib/records.mjs';
 import { scoreAnswer, wilson } from '../lib/score.mjs';
 import { inSubset } from '../lib/subset.mjs';
 import { CONFIGS } from '../lib/configs.mjs';
@@ -52,7 +53,7 @@ const run1Correct = {};
 
 for (const f of files) {
   const id = f.replace('.jsonl', '');
-  const recs = readStamped(`${ROOT}results/raw/${f}`, STAMP);
+  const recs = readConfigRecords(`${ROOT}results/raw/${f}`, STAMP, f.replace('.jsonl', ''));
   // One outcome per (panel, run): the last call that answered, else the last call.
   const calls = new Map();
   for (const r of recs) {
@@ -216,13 +217,13 @@ writeFileSync(`${ROOT}results/failures.json`, JSON.stringify(failures, null, 2) 
 // Markdown report.
 const md = [];
 md.push(`# Results (stamp ${STAMP})`, '', `Tolerances: peak value within 5% (after unit conversion), peak time within 5% of the range (3/18/72 min), threshold exact, top series nearest legend name (<=2 edits, <=1 for short names, ties wrong). Run 1 covers all 100 panels; later runs cover the subset of 34.`, '');
-md.push('## Run 1, 100 panels', '', '| configuration | all four right | 95% CI | peak value | peak time | threshold | top series | non-answers | $ per 1,000 | p50 latency | p95 latency |', '|---|---|---|---|---|---|---|---|---|---|---|');
+md.push('## Run 1, 100 panels', '', '| configuration | all four right | 95% CI | peak value | peak time | threshold | top series | non-answers | $ per 1,000 | p50 latency (all runs) | p95 latency (all runs) |', '|---|---|---|---|---|---|---|---|---|---|---|');
 for (const [id, o] of Object.entries(summary.configs)) {
   const r = o.run1;
   const na = Object.entries(o.nonAnswersRun1).filter(([, v]) => v).map(([k, v]) => `${k} ${v}`).join(', ') || '0';
   md.push(`| ${id} | ${r.all.correct}/${r.all.of} | ${r.all.ci95[0]}-${r.all.ci95[1]}% | ${r.value.correct} | ${r.time.correct} | ${r.threshold.correct} | ${r.series.correct} | ${na} | ${o.cost.per1000.toFixed(3)} | ${(o.latencyMs.p50 / 1000).toFixed(1)} s | ${(o.latencyMs.p95 / 1000).toFixed(1)} s |`);
 }
-md.push('', 'Non-answers count as wrong in "all four right". Latency is the attempt that succeeded; retried attempts are counted below, not timed.', '');
+md.push('', 'Accuracy and cost are run 1. Latency covers every successful call in all runs, and is the attempt that succeeded; retried attempts are counted below, not timed. Non-answers count as wrong in "all four right".', '');
 md.push('## By panel feature, run 1 (all four right)', '');
 md.push(`| feature | n | ${ids.join(' | ')} |`, `|---|---|${ids.map(() => '---').join('|')}|`);
 for (const [name] of FEATURES) {
