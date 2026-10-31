@@ -76,7 +76,7 @@ The bot (`lib/bot.mjs`) caught 97 of Nemotron's 155 wrong reads (63%) at its def
 These changed what we report:
 
 - **Cached images flattered the cost.** Runs 2 and 3 send the same image again, and Qwen3.8-Max, Gemma 4 and Llama 4 Maverick serve most of it from the prompt cache. Costs are now from run 1 only. That raised Qwen3.8-Max from $1.11 to $1.47 per 1,000.
-- **Rate limits are not latency.** Latency is the attempt that succeeded. The parallel runs had 88 (Nemotron), 99 (Qwen3.8-Max) and 75 (Gemma 4) retried 429 attempts, counted in `results/summary.md`.
+- **Rate limits are not latency.** Latency is the attempt that succeeded. The parallel runs had retried 429 attempts: 88 for Nemotron with reasoning off, 7 with reasoning on, 99 for Qwen3.8-Max and 75 for Gemma 4, counted in `results/summary.md`.
 - **`reasoning_tokens` is always 0** for Nemotron with reasoning on, while `completion_tokens` includes the reasoning. Cost uses `completion_tokens`.
 - **Reasoning off** uses `reasoning_effort: "none"`. `chat_template_kwargs.enable_thinking: false` also works. `/no_think` in the system prompt does not (`results/model-access/reasoning-switch-2026-10-31.jsonl`).
 - **Temperature 0 does not explain the reasoning result.** On the 34-panel subset, temperature 0.6 got 19 right, temperature 0 got 20, reasoning off got 20.
