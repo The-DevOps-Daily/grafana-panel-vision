@@ -1,0 +1,5287 @@
+{
+  "stamp": "47afe9459fbc1089",
+  "note": "All runs. \"missed\" = wrong read the bot confirmed.",
+  "configs": {
+    "nemotron-3.5-super-vl": {
+      "0.05": {
+        "reads": 300,
+        "wrong": 155,
+        "caught": 125,
+        "missed": 30,
+        "rightFlagged": 0,
+        "confirmed": 175,
+        "confirmedWrong": 30,
+        "missedBy": {
+          "series": 21,
+          "threshold": 5,
+          "time": 3,
+          "threshold+series": 1
+        },
+        "missedExamples": [
+          {
+            "panel": "p008",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -2.1,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 92,
+                "unit": "%"
+              },
+              "peakTime": "14:55",
+              "thresholdCrossed": "yes",
+              "topSeries": "node-b2",
+              "summary": "Error ratio spiked to about 92% around 14:55 UTC, clearly crossing the red dashed 66% threshold, driven mainly by node-b2."
+            },
+            "truth": {
+              "peak": "93.94%",
+              "time": "14:52",
+              "threshold": "yes",
+              "top": "node-c3"
+            }
+          },
+          {
+            "panel": "p018",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 0.9,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 7000,
+                "unit": "req/s"
+              },
+              "peakTime": "11:30",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /static",
+              "summary": "HTTP request rate peaks around 11:30 UTC at about 7k req/s, driven mainly by GET /static, then returns to a steady 3k req/s baseline."
+            },
+            "truth": {
+              "peak": "6.94K req/s",
+              "time": "11:30",
+              "threshold": "no threshold",
+              "top": "POST /api/cart"
+            }
+          },
+          {
+            "panel": "p020",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 2.5,
+            "timeErrMin": 50,
+            "said": {
+              "peak": {
+                "value": 40,
+                "unit": "%"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no",
+              "topSeries": "node-c3",
+              "summary": "Error ratio stays around 10-20% then spikes to about 40% near 12:00 UTC."
+            },
+            "truth": {
+              "peak": "39.01%",
+              "time": "12:50",
+              "threshold": "no",
+              "top": "node-a1"
+            }
+          },
+          {
+            "panel": "p042",
+            "run": 1,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": 2.7,
+            "timeErrMin": 1,
+            "said": {
+              "peak": {
+                "value": 12500,
+                "unit": "req/s"
+              },
+              "peakTime": "02:02",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "API throughput remains around 7.5k req/s with a sharp spike to 12.5k req/s near 02:02, mostly driven by GET /api/search."
+            },
+            "truth": {
+              "peak": "12.17K req/s",
+              "time": "02:03",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          },
+          {
+            "panel": "p043",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -0.9,
+            "timeErrMin": 35,
+            "said": {
+              "peak": {
+                "value": 17000,
+                "unit": "req/s"
+              },
+              "peakTime": "21:15",
+              "thresholdCrossed": "yes",
+              "topSeries": "POST /api/cart",
+              "summary": "API throughput is normally around 8-10K req/s but spiked above 15K req/s after 21:00, crossing the 15K threshold."
+            },
+            "truth": {
+              "peak": "17.15K req/s",
+              "time": "21:50",
+              "threshold": "yes",
+              "top": "GET /api/orders"
+            }
+          },
+          {
+            "panel": "p048",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 3.5,
+            "timeErrMin": 6,
+            "said": {
+              "peak": {
+                "value": 3,
+                "unit": "GiB"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "JVM heap used spikes sharply to 3 GiB near 12:00 UTC, driven by the worker-5c6b-z9p2 series."
+            },
+            "truth": {
+              "peak": "2.9 GiB",
+              "time": "12:06",
+              "threshold": "no threshold",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p054",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -1.4,
+            "timeErrMin": 5,
+            "said": {
+              "peak": {
+                "value": 120,
+                "unit": "MiB"
+              },
+              "peakTime": "09:45",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "api-66f4-nlr8",
+              "summary": "JVM heap usage is stable around 50 MiB with a sharp spike to about 120 MiB near 09:45 UTC, dominated by the api-66f4-nlr8 series."
+            },
+            "truth": {
+              "peak": "121.75 MiB",
+              "time": "09:40",
+              "threshold": "no threshold",
+              "top": "web-7d9f-q8m1"
+            }
+          },
+          {
+            "panel": "p084",
+            "run": 1,
+            "wrong": [
+              "time"
+            ],
+            "valueErrPct": -0.7,
+            "timeErrMin": 7,
+            "said": {
+              "peak": {
+                "value": 4.2,
+                "unit": "s"
+              },
+              "peakTime": "15:40",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "orders",
+              "summary": "Request duration p99 spiked above 4s around 15:40 for the orders series, then settled around 1s with checkout and payments contributing most of the baseline."
+            },
+            "truth": {
+              "peak": "4.23 s",
+              "time": "15:47",
+              "threshold": "no threshold",
+              "top": "orders"
+            }
+          },
+          {
+            "panel": "p083",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 1.4,
+            "timeErrMin": 12,
+            "said": {
+              "peak": {
+                "value": 90,
+                "unit": "MiB"
+              },
+              "peakTime": "01:00",
+              "thresholdCrossed": "no",
+              "topSeries": "web-7d9f-q8m1",
+              "summary": "Memory working set stays between 25-35 MiB until a spike to about 90 MiB around 01:00 UTC, driven mainly by the web-7d9f-q8m1 series."
+            },
+            "truth": {
+              "peak": "88.79 MiB",
+              "time": "01:12",
+              "threshold": "no",
+              "top": "api-66f4-w5d0"
+            }
+          },
+          {
+            "panel": "p008",
+            "run": 2,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 1.1,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 95,
+                "unit": "%"
+              },
+              "peakTime": "14:55",
+              "thresholdCrossed": "yes",
+              "topSeries": "node-b2",
+              "summary": "Error ratio spikes sharply just before 15:00 UTC, crossing the 65% threshold, driven by node-b2."
+            },
+            "truth": {
+              "peak": "93.94%",
+              "time": "14:52",
+              "threshold": "yes",
+              "top": "node-c3"
+            }
+          },
+          {
+            "panel": "p011",
+            "run": 2,
+            "wrong": [
+              "time"
+            ],
+            "valueErrPct": -0.5,
+            "timeErrMin": 28,
+            "said": {
+              "peak": {
+                "value": 460,
+                "unit": "ms"
+              },
+              "peakTime": "00:00",
+              "thresholdCrossed": "yes",
+              "topSeries": "cart",
+              "summary": "Upstream response time spikes sharply after midnight, with the cart series crossing the 280 ms threshold and peaking around 460 ms."
+            },
+            "truth": {
+              "peak": "462.52 ms",
+              "time": "00:28",
+              "threshold": "yes",
+              "top": "cart"
+            }
+          },
+          {
+            "panel": "p018",
+            "run": 2,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 0.9,
+            "timeErrMin": 30,
+            "said": {
+              "peak": {
+                "value": 7000,
+                "unit": "req/s"
+              },
+              "peakTime": "11:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /static",
+              "summary": "HTTP request rate spiked to about 7k req/s around 11:00 UTC, dominated by GET /static traffic, then returned to baseline around 3k req/s."
+            },
+            "truth": {
+              "peak": "6.94K req/s",
+              "time": "11:30",
+              "threshold": "no threshold",
+              "top": "POST /api/cart"
+            }
+          }
+        ]
+      },
+      "0.1": {
+        "reads": 300,
+        "wrong": 155,
+        "caught": 97,
+        "missed": 58,
+        "rightFlagged": 0,
+        "confirmed": 203,
+        "confirmedWrong": 58,
+        "missedBy": {
+          "value": 24,
+          "series": 21,
+          "threshold": 5,
+          "time": 3,
+          "value+time": 4,
+          "threshold+series": 1
+        },
+        "missedExamples": [
+          {
+            "panel": "p007",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 5.5,
+            "timeErrMin": 6,
+            "said": {
+              "peak": {
+                "value": 3.5,
+                "unit": "GiB"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no",
+              "topSeries": "web-7d9f-xf2k4",
+              "summary": "JVM heap usage stays around 1-1.5 GiB with a spike near 12:00 reaching about 3.5 GiB, remaining below the 4.5 GiB threshold."
+            },
+            "truth": {
+              "peak": "3.32 GiB",
+              "time": "12:06",
+              "threshold": "no",
+              "top": "web-7d9f-x2k4"
+            }
+          },
+          {
+            "panel": "p008",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -2.1,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 92,
+                "unit": "%"
+              },
+              "peakTime": "14:55",
+              "thresholdCrossed": "yes",
+              "topSeries": "node-b2",
+              "summary": "Error ratio spiked to about 92% around 14:55 UTC, clearly crossing the red dashed 66% threshold, driven mainly by node-b2."
+            },
+            "truth": {
+              "peak": "93.94%",
+              "time": "14:52",
+              "threshold": "yes",
+              "top": "node-c3"
+            }
+          },
+          {
+            "panel": "p018",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 0.9,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 7000,
+                "unit": "req/s"
+              },
+              "peakTime": "11:30",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /static",
+              "summary": "HTTP request rate peaks around 11:30 UTC at about 7k req/s, driven mainly by GET /static, then returns to a steady 3k req/s baseline."
+            },
+            "truth": {
+              "peak": "6.94K req/s",
+              "time": "11:30",
+              "threshold": "no threshold",
+              "top": "POST /api/cart"
+            }
+          },
+          {
+            "panel": "p020",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 2.5,
+            "timeErrMin": 50,
+            "said": {
+              "peak": {
+                "value": 40,
+                "unit": "%"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no",
+              "topSeries": "node-c3",
+              "summary": "Error ratio stays around 10-20% then spikes to about 40% near 12:00 UTC."
+            },
+            "truth": {
+              "peak": "39.01%",
+              "time": "12:50",
+              "threshold": "no",
+              "top": "node-a1"
+            }
+          },
+          {
+            "panel": "p022",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 5.4,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 80,
+                "unit": "req/s"
+              },
+              "peakTime": "02:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /static",
+              "summary": "Queue consumer rate peaked at around 80 req/s near 02:00 UTC, driven mainly by GET /static, then settled near 50 req/s."
+            },
+            "truth": {
+              "peak": "75.92 req/s",
+              "time": "01:58",
+              "threshold": "no threshold",
+              "top": "GET /static"
+            }
+          },
+          {
+            "panel": "p036",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -9.8,
+            "timeErrMin": 1,
+            "said": {
+              "peak": {
+                "value": 128,
+                "unit": "MiB"
+              },
+              "peakTime": "17:10",
+              "thresholdCrossed": "yes",
+              "topSeries": "api-664f-n1r8",
+              "summary": "Page cache memory spiked above the 64 MiB threshold around 17:10, primarily driven by the api-664f-n1r8 series, before settling back below 64 MiB."
+            },
+            "truth": {
+              "peak": "141.92 MiB",
+              "time": "17:11",
+              "threshold": "yes",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p042",
+            "run": 1,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": 2.7,
+            "timeErrMin": 1,
+            "said": {
+              "peak": {
+                "value": 12500,
+                "unit": "req/s"
+              },
+              "peakTime": "02:02",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "API throughput remains around 7.5k req/s with a sharp spike to 12.5k req/s near 02:02, mostly driven by GET /api/search."
+            },
+            "truth": {
+              "peak": "12.17K req/s",
+              "time": "02:03",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          },
+          {
+            "panel": "p043",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -0.9,
+            "timeErrMin": 35,
+            "said": {
+              "peak": {
+                "value": 17000,
+                "unit": "req/s"
+              },
+              "peakTime": "21:15",
+              "thresholdCrossed": "yes",
+              "topSeries": "POST /api/cart",
+              "summary": "API throughput is normally around 8-10K req/s but spiked above 15K req/s after 21:00, crossing the 15K threshold."
+            },
+            "truth": {
+              "peak": "17.15K req/s",
+              "time": "21:50",
+              "threshold": "yes",
+              "top": "GET /api/orders"
+            }
+          },
+          {
+            "panel": "p047",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 8.4,
+            "timeErrMin": 4,
+            "said": {
+              "peak": {
+                "value": 500,
+                "unit": "ms"
+              },
+              "peakTime": "13:20",
+              "thresholdCrossed": "yes",
+              "topSeries": "inventory",
+              "summary": "p99 API latency spiked above the 500 ms threshold around 13:20 UTC, driven by the inventory series, before returning to normal."
+            },
+            "truth": {
+              "peak": "461.1 ms",
+              "time": "13:24",
+              "threshold": "yes",
+              "top": "inventory"
+            }
+          },
+          {
+            "panel": "p048",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 3.5,
+            "timeErrMin": 6,
+            "said": {
+              "peak": {
+                "value": 3,
+                "unit": "GiB"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "JVM heap used spikes sharply to 3 GiB near 12:00 UTC, driven by the worker-5c6b-z9p2 series."
+            },
+            "truth": {
+              "peak": "2.9 GiB",
+              "time": "12:06",
+              "threshold": "no threshold",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p054",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -1.4,
+            "timeErrMin": 5,
+            "said": {
+              "peak": {
+                "value": 120,
+                "unit": "MiB"
+              },
+              "peakTime": "09:45",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "api-66f4-nlr8",
+              "summary": "JVM heap usage is stable around 50 MiB with a sharp spike to about 120 MiB near 09:45 UTC, dominated by the api-66f4-nlr8 series."
+            },
+            "truth": {
+              "peak": "121.75 MiB",
+              "time": "09:40",
+              "threshold": "no threshold",
+              "top": "web-7d9f-q8m1"
+            }
+          },
+          {
+            "panel": "p056",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 8,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 8,
+                "unit": "GiB"
+              },
+              "peakTime": "10:15",
+              "thresholdCrossed": "no",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "Container RSS memory usage remains stable around 2-3 GiB until a sharp spike near 10:15 UTC, staying below the 10 GiB threshold."
+            },
+            "truth": {
+              "peak": "7.41 GiB",
+              "time": "10:12",
+              "threshold": "no",
+              "top": "worker-5c6b-z9p2"
+            }
+          }
+        ]
+      },
+      "0.2": {
+        "reads": 300,
+        "wrong": 155,
+        "caught": 90,
+        "missed": 65,
+        "rightFlagged": 0,
+        "confirmed": 210,
+        "confirmedWrong": 65,
+        "missedBy": {
+          "value": 31,
+          "series": 21,
+          "threshold": 5,
+          "time": 3,
+          "value+time": 4,
+          "threshold+series": 1
+        },
+        "missedExamples": [
+          {
+            "panel": "p007",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 5.5,
+            "timeErrMin": 6,
+            "said": {
+              "peak": {
+                "value": 3.5,
+                "unit": "GiB"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no",
+              "topSeries": "web-7d9f-xf2k4",
+              "summary": "JVM heap usage stays around 1-1.5 GiB with a spike near 12:00 reaching about 3.5 GiB, remaining below the 4.5 GiB threshold."
+            },
+            "truth": {
+              "peak": "3.32 GiB",
+              "time": "12:06",
+              "threshold": "no",
+              "top": "web-7d9f-x2k4"
+            }
+          },
+          {
+            "panel": "p008",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -2.1,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 92,
+                "unit": "%"
+              },
+              "peakTime": "14:55",
+              "thresholdCrossed": "yes",
+              "topSeries": "node-b2",
+              "summary": "Error ratio spiked to about 92% around 14:55 UTC, clearly crossing the red dashed 66% threshold, driven mainly by node-b2."
+            },
+            "truth": {
+              "peak": "93.94%",
+              "time": "14:52",
+              "threshold": "yes",
+              "top": "node-c3"
+            }
+          },
+          {
+            "panel": "p018",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 0.9,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 7000,
+                "unit": "req/s"
+              },
+              "peakTime": "11:30",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /static",
+              "summary": "HTTP request rate peaks around 11:30 UTC at about 7k req/s, driven mainly by GET /static, then returns to a steady 3k req/s baseline."
+            },
+            "truth": {
+              "peak": "6.94K req/s",
+              "time": "11:30",
+              "threshold": "no threshold",
+              "top": "POST /api/cart"
+            }
+          },
+          {
+            "panel": "p020",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 2.5,
+            "timeErrMin": 50,
+            "said": {
+              "peak": {
+                "value": 40,
+                "unit": "%"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no",
+              "topSeries": "node-c3",
+              "summary": "Error ratio stays around 10-20% then spikes to about 40% near 12:00 UTC."
+            },
+            "truth": {
+              "peak": "39.01%",
+              "time": "12:50",
+              "threshold": "no",
+              "top": "node-a1"
+            }
+          },
+          {
+            "panel": "p022",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 5.4,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 80,
+                "unit": "req/s"
+              },
+              "peakTime": "02:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /static",
+              "summary": "Queue consumer rate peaked at around 80 req/s near 02:00 UTC, driven mainly by GET /static, then settled near 50 req/s."
+            },
+            "truth": {
+              "peak": "75.92 req/s",
+              "time": "01:58",
+              "threshold": "no threshold",
+              "top": "GET /static"
+            }
+          },
+          {
+            "panel": "p036",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -9.8,
+            "timeErrMin": 1,
+            "said": {
+              "peak": {
+                "value": 128,
+                "unit": "MiB"
+              },
+              "peakTime": "17:10",
+              "thresholdCrossed": "yes",
+              "topSeries": "api-664f-n1r8",
+              "summary": "Page cache memory spiked above the 64 MiB threshold around 17:10, primarily driven by the api-664f-n1r8 series, before settling back below 64 MiB."
+            },
+            "truth": {
+              "peak": "141.92 MiB",
+              "time": "17:11",
+              "threshold": "yes",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p042",
+            "run": 1,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": 2.7,
+            "timeErrMin": 1,
+            "said": {
+              "peak": {
+                "value": 12500,
+                "unit": "req/s"
+              },
+              "peakTime": "02:02",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "API throughput remains around 7.5k req/s with a sharp spike to 12.5k req/s near 02:02, mostly driven by GET /api/search."
+            },
+            "truth": {
+              "peak": "12.17K req/s",
+              "time": "02:03",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          },
+          {
+            "panel": "p043",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -0.9,
+            "timeErrMin": 35,
+            "said": {
+              "peak": {
+                "value": 17000,
+                "unit": "req/s"
+              },
+              "peakTime": "21:15",
+              "thresholdCrossed": "yes",
+              "topSeries": "POST /api/cart",
+              "summary": "API throughput is normally around 8-10K req/s but spiked above 15K req/s after 21:00, crossing the 15K threshold."
+            },
+            "truth": {
+              "peak": "17.15K req/s",
+              "time": "21:50",
+              "threshold": "yes",
+              "top": "GET /api/orders"
+            }
+          },
+          {
+            "panel": "p047",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 8.4,
+            "timeErrMin": 4,
+            "said": {
+              "peak": {
+                "value": 500,
+                "unit": "ms"
+              },
+              "peakTime": "13:20",
+              "thresholdCrossed": "yes",
+              "topSeries": "inventory",
+              "summary": "p99 API latency spiked above the 500 ms threshold around 13:20 UTC, driven by the inventory series, before returning to normal."
+            },
+            "truth": {
+              "peak": "461.1 ms",
+              "time": "13:24",
+              "threshold": "yes",
+              "top": "inventory"
+            }
+          },
+          {
+            "panel": "p048",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 3.5,
+            "timeErrMin": 6,
+            "said": {
+              "peak": {
+                "value": 3,
+                "unit": "GiB"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "JVM heap used spikes sharply to 3 GiB near 12:00 UTC, driven by the worker-5c6b-z9p2 series."
+            },
+            "truth": {
+              "peak": "2.9 GiB",
+              "time": "12:06",
+              "threshold": "no threshold",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p054",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -1.4,
+            "timeErrMin": 5,
+            "said": {
+              "peak": {
+                "value": 120,
+                "unit": "MiB"
+              },
+              "peakTime": "09:45",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "api-66f4-nlr8",
+              "summary": "JVM heap usage is stable around 50 MiB with a sharp spike to about 120 MiB near 09:45 UTC, dominated by the api-66f4-nlr8 series."
+            },
+            "truth": {
+              "peak": "121.75 MiB",
+              "time": "09:40",
+              "threshold": "no threshold",
+              "top": "web-7d9f-q8m1"
+            }
+          },
+          {
+            "panel": "p056",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 8,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 8,
+                "unit": "GiB"
+              },
+              "peakTime": "10:15",
+              "thresholdCrossed": "no",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "Container RSS memory usage remains stable around 2-3 GiB until a sharp spike near 10:15 UTC, staying below the 10 GiB threshold."
+            },
+            "truth": {
+              "peak": "7.41 GiB",
+              "time": "10:12",
+              "threshold": "no",
+              "top": "worker-5c6b-z9p2"
+            }
+          }
+        ]
+      }
+    },
+    "nemotron-3.5-super-vl+reasoning": {
+      "0.05": {
+        "reads": 168,
+        "wrong": 79,
+        "caught": 61,
+        "missed": 18,
+        "rightFlagged": 0,
+        "confirmed": 107,
+        "confirmedWrong": 18,
+        "missedBy": {
+          "series": 11,
+          "threshold": 4,
+          "time+series": 1,
+          "time": 2
+        },
+        "missedExamples": [
+          {
+            "panel": "p016",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 4.5,
+            "timeErrMin": 55,
+            "said": {
+              "peak": {
+                "value": 4000,
+                "unit": "req/s"
+              },
+              "peakTime": "18:00",
+              "thresholdCrossed": "yes",
+              "topSeries": "GET /health",
+              "summary": "gRPC calls spike above the red threshold near 18:00 UTC, driven by GET /health."
+            },
+            "truth": {
+              "peak": "3.83K req/s",
+              "time": "17:05",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          },
+          {
+            "panel": "p020",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 2.5,
+            "timeErrMin": 50,
+            "said": {
+              "peak": {
+                "value": 40,
+                "unit": "%"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no",
+              "topSeries": "node-c3",
+              "summary": "Error ratios for node-a1, node-d4, and node-c3 stay around 10-20% until a sharp spike near 12:00 reaches about 40%, remaining below the 50% threshold."
+            },
+            "truth": {
+              "peak": "39.01%",
+              "time": "12:50",
+              "threshold": "no",
+              "top": "node-a1"
+            }
+          },
+          {
+            "panel": "p022",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -1.2,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 75,
+                "unit": "req/s"
+              },
+              "peakTime": "02:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "Queue consumer rate spikes sharply at 02:00 UTC before stabilizing around 40-50 req/s."
+            },
+            "truth": {
+              "peak": "75.92 req/s",
+              "time": "01:58",
+              "threshold": "no threshold",
+              "top": "GET /static"
+            }
+          },
+          {
+            "panel": "p034",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 0.2,
+            "timeErrMin": 8,
+            "said": {
+              "peak": {
+                "value": 3.2,
+                "unit": "GiB"
+              },
+              "peakTime": "08:30",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "api-66t4-ntr8",
+              "summary": "Container RSS memory spikes to about 3.2 GiB at 08:30 UTC, primarily driven by the api container, with no threshold configured."
+            },
+            "truth": {
+              "peak": "3.19 GiB",
+              "time": "08:22",
+              "threshold": "no threshold",
+              "top": "worker-5c6b-h3t7"
+            }
+          },
+          {
+            "panel": "p042",
+            "run": 1,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": 2.7,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 12500,
+                "unit": "req/s"
+              },
+              "peakTime": "02:03",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "API throughput shows a large spike in GET /api/search traffic around 02:03 UTC reaching near 12.5K req/s."
+            },
+            "truth": {
+              "peak": "12.17K req/s",
+              "time": "02:03",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          },
+          {
+            "panel": "p043",
+            "run": 1,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": -0.9,
+            "timeErrMin": 55,
+            "said": {
+              "peak": {
+                "value": 17000,
+                "unit": "req/s"
+              },
+              "peakTime": "20:55",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/orders",
+              "summary": "API throughput shows stable traffic around 10K req/s with a sharp spike to ~17K req/s just before 21:00 UTC."
+            },
+            "truth": {
+              "peak": "17.15K req/s",
+              "time": "21:50",
+              "threshold": "yes",
+              "top": "GET /api/orders"
+            }
+          },
+          {
+            "panel": "p048",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 3.5,
+            "timeErrMin": 6,
+            "said": {
+              "peak": {
+                "value": 3,
+                "unit": "GiB"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "JVM heap usage spikes sharply to nearly 3 GiB at 12:00 UTC, primarily driven by the worker series."
+            },
+            "truth": {
+              "peak": "2.9 GiB",
+              "time": "12:06",
+              "threshold": "no threshold",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p051",
+            "run": 1,
+            "wrong": [
+              "time",
+              "series"
+            ],
+            "valueErrPct": -2.3,
+            "timeErrMin": 20,
+            "said": {
+              "peak": {
+                "value": 8,
+                "unit": "GiB"
+              },
+              "peakTime": "12:30",
+              "thresholdCrossed": "no",
+              "topSeries": "web-7d9f-q8m1",
+              "summary": "Memory working set is stable until a sharp spike after 12:00 UTC reaches roughly 8 GiB, staying below the 10 GiB threshold."
+            },
+            "truth": {
+              "peak": "8.19 GiB",
+              "time": "12:50",
+              "threshold": "no",
+              "top": "api-66f4-w5d0"
+            }
+          },
+          {
+            "panel": "p054",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -1.4,
+            "timeErrMin": 25,
+            "said": {
+              "peak": {
+                "value": 120,
+                "unit": "MiB"
+              },
+              "peakTime": "09:15",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-h3t7",
+              "summary": "JVM heap usage spikes to ~120 MiB around 09:15 UTC with no threshold defined, driven mainly by worker-5c6b-h3t7."
+            },
+            "truth": {
+              "peak": "121.75 MiB",
+              "time": "09:40",
+              "threshold": "no threshold",
+              "top": "web-7d9f-q8m1"
+            }
+          },
+          {
+            "panel": "p075",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 1.9,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 5.8,
+                "unit": "GiB"
+              },
+              "peakTime": "17:20",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "api-66f4-n1rB",
+              "summary": "Redis used memory spikes sharply near 17:20 UTC, reaching nearly 6 GiB."
+            },
+            "truth": {
+              "peak": "5.69 GiB",
+              "time": "17:20",
+              "threshold": "no threshold",
+              "top": "api-66f4-w5d0"
+            }
+          },
+          {
+            "panel": "p016",
+            "run": 2,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 4.5,
+            "timeErrMin": 55,
+            "said": {
+              "peak": {
+                "value": 4000,
+                "unit": "req/s"
+              },
+              "peakTime": "18:00",
+              "thresholdCrossed": "yes",
+              "topSeries": "GET /health",
+              "summary": "gRPC calls panel shows a traffic spike in GET /health crossing the threshold around 18:00 UTC."
+            },
+            "truth": {
+              "peak": "3.83K req/s",
+              "time": "17:05",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          },
+          {
+            "panel": "p034",
+            "run": 2,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 0.2,
+            "timeErrMin": 7,
+            "said": {
+              "peak": {
+                "value": 3.2,
+                "unit": "GiB"
+              },
+              "peakTime": "08:15",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "web-7d9f-q8m1",
+              "summary": "Container RSS usage shows a significant spike around 08:15 UTC exceeding 3 GiB, primarily driven by the web container."
+            },
+            "truth": {
+              "peak": "3.19 GiB",
+              "time": "08:22",
+              "threshold": "no threshold",
+              "top": "worker-5c6b-h3t7"
+            }
+          }
+        ]
+      },
+      "0.1": {
+        "reads": 168,
+        "wrong": 79,
+        "caught": 45,
+        "missed": 34,
+        "rightFlagged": 0,
+        "confirmed": 123,
+        "confirmedWrong": 34,
+        "missedBy": {
+          "value": 16,
+          "series": 11,
+          "threshold": 4,
+          "time+series": 1,
+          "time": 2
+        },
+        "missedExamples": [
+          {
+            "panel": "p002",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 8.3,
+            "timeErrMin": 35,
+            "said": {
+              "peak": {
+                "value": 3.5,
+                "unit": "s"
+              },
+              "peakTime": "18:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "orders",
+              "summary": "Upstream response time spikes to about 3.5s at 18:00 UTC driven by the orders service, then stabilizes around 1–1.5s."
+            },
+            "truth": {
+              "peak": "3.23 s",
+              "time": "17:25",
+              "threshold": "no threshold",
+              "top": "orders"
+            }
+          },
+          {
+            "panel": "p005",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 9,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 200,
+                "unit": "req/s"
+              },
+              "peakTime": "20:15",
+              "thresholdCrossed": "no",
+              "topSeries": "POST /api/cart",
+              "summary": "POST /api/cart gRPC calls show a spike around 20:15 UTC, remaining below the upper threshold region."
+            },
+            "truth": {
+              "peak": "183.46 req/s",
+              "time": "20:12",
+              "threshold": "no",
+              "top": "POST /api/cart"
+            }
+          },
+          {
+            "panel": "p016",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 4.5,
+            "timeErrMin": 55,
+            "said": {
+              "peak": {
+                "value": 4000,
+                "unit": "req/s"
+              },
+              "peakTime": "18:00",
+              "thresholdCrossed": "yes",
+              "topSeries": "GET /health",
+              "summary": "gRPC calls spike above the red threshold near 18:00 UTC, driven by GET /health."
+            },
+            "truth": {
+              "peak": "3.83K req/s",
+              "time": "17:05",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          },
+          {
+            "panel": "p020",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 2.5,
+            "timeErrMin": 50,
+            "said": {
+              "peak": {
+                "value": 40,
+                "unit": "%"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no",
+              "topSeries": "node-c3",
+              "summary": "Error ratios for node-a1, node-d4, and node-c3 stay around 10-20% until a sharp spike near 12:00 reaches about 40%, remaining below the 50% threshold."
+            },
+            "truth": {
+              "peak": "39.01%",
+              "time": "12:50",
+              "threshold": "no",
+              "top": "node-a1"
+            }
+          },
+          {
+            "panel": "p022",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -1.2,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 75,
+                "unit": "req/s"
+              },
+              "peakTime": "02:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "Queue consumer rate spikes sharply at 02:00 UTC before stabilizing around 40-50 req/s."
+            },
+            "truth": {
+              "peak": "75.92 req/s",
+              "time": "01:58",
+              "threshold": "no threshold",
+              "top": "GET /static"
+            }
+          },
+          {
+            "panel": "p025",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 8,
+            "timeErrMin": 1,
+            "said": {
+              "peak": {
+                "value": 1.5,
+                "unit": "GiB"
+              },
+              "peakTime": "04:42",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "Worker container RSS spikes to about 1.5 GiB shortly after 04:40 UTC then settles near 512 MiB."
+            },
+            "truth": {
+              "peak": "1.39 GiB",
+              "time": "04:43",
+              "threshold": "no threshold",
+              "top": "worker-5c6b-z9p2"
+            }
+          },
+          {
+            "panel": "p034",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 0.2,
+            "timeErrMin": 8,
+            "said": {
+              "peak": {
+                "value": 3.2,
+                "unit": "GiB"
+              },
+              "peakTime": "08:30",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "api-66t4-ntr8",
+              "summary": "Container RSS memory spikes to about 3.2 GiB at 08:30 UTC, primarily driven by the api container, with no threshold configured."
+            },
+            "truth": {
+              "peak": "3.19 GiB",
+              "time": "08:22",
+              "threshold": "no threshold",
+              "top": "worker-5c6b-h3t7"
+            }
+          },
+          {
+            "panel": "p036",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -9.8,
+            "timeErrMin": 1,
+            "said": {
+              "peak": {
+                "value": 128,
+                "unit": "MiB"
+              },
+              "peakTime": "17:10",
+              "thresholdCrossed": "yes",
+              "topSeries": "api-64f4-n1r8",
+              "summary": "Page cache usage spiked to 128 MiB around 17:10 UTC, exceeding the 64 MiB threshold."
+            },
+            "truth": {
+              "peak": "141.92 MiB",
+              "time": "17:11",
+              "threshold": "yes",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p042",
+            "run": 1,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": 2.7,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 12500,
+                "unit": "req/s"
+              },
+              "peakTime": "02:03",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "API throughput shows a large spike in GET /api/search traffic around 02:03 UTC reaching near 12.5K req/s."
+            },
+            "truth": {
+              "peak": "12.17K req/s",
+              "time": "02:03",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          },
+          {
+            "panel": "p041",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -6.6,
+            "timeErrMin": 1,
+            "said": {
+              "peak": {
+                "value": 6,
+                "unit": "GiB"
+              },
+              "peakTime": "09:42",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "Page cache usage spikes to about 6 GiB around 09:42 UTC, primarily driven by worker-5c6b-z9p2."
+            },
+            "truth": {
+              "peak": "6.42 GiB",
+              "time": "09:43",
+              "threshold": "no threshold",
+              "top": "worker-5c6b-z9p2"
+            }
+          },
+          {
+            "panel": "p043",
+            "run": 1,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": -0.9,
+            "timeErrMin": 55,
+            "said": {
+              "peak": {
+                "value": 17000,
+                "unit": "req/s"
+              },
+              "peakTime": "20:55",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/orders",
+              "summary": "API throughput shows stable traffic around 10K req/s with a sharp spike to ~17K req/s just before 21:00 UTC."
+            },
+            "truth": {
+              "peak": "17.15K req/s",
+              "time": "21:50",
+              "threshold": "yes",
+              "top": "GET /api/orders"
+            }
+          },
+          {
+            "panel": "p048",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 3.5,
+            "timeErrMin": 6,
+            "said": {
+              "peak": {
+                "value": 3,
+                "unit": "GiB"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "JVM heap usage spikes sharply to nearly 3 GiB at 12:00 UTC, primarily driven by the worker series."
+            },
+            "truth": {
+              "peak": "2.9 GiB",
+              "time": "12:06",
+              "threshold": "no threshold",
+              "top": "api-66f4-n1r8"
+            }
+          }
+        ]
+      },
+      "0.2": {
+        "reads": 168,
+        "wrong": 79,
+        "caught": 36,
+        "missed": 43,
+        "rightFlagged": 0,
+        "confirmed": 132,
+        "confirmedWrong": 43,
+        "missedBy": {
+          "value": 25,
+          "series": 11,
+          "threshold": 4,
+          "time+series": 1,
+          "time": 2
+        },
+        "missedExamples": [
+          {
+            "panel": "p002",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 8.3,
+            "timeErrMin": 35,
+            "said": {
+              "peak": {
+                "value": 3.5,
+                "unit": "s"
+              },
+              "peakTime": "18:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "orders",
+              "summary": "Upstream response time spikes to about 3.5s at 18:00 UTC driven by the orders service, then stabilizes around 1–1.5s."
+            },
+            "truth": {
+              "peak": "3.23 s",
+              "time": "17:25",
+              "threshold": "no threshold",
+              "top": "orders"
+            }
+          },
+          {
+            "panel": "p005",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 9,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 200,
+                "unit": "req/s"
+              },
+              "peakTime": "20:15",
+              "thresholdCrossed": "no",
+              "topSeries": "POST /api/cart",
+              "summary": "POST /api/cart gRPC calls show a spike around 20:15 UTC, remaining below the upper threshold region."
+            },
+            "truth": {
+              "peak": "183.46 req/s",
+              "time": "20:12",
+              "threshold": "no",
+              "top": "POST /api/cart"
+            }
+          },
+          {
+            "panel": "p015",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 12.5,
+            "timeErrMin": 1,
+            "said": {
+              "peak": {
+                "value": 3800,
+                "unit": "req/s"
+              },
+              "peakTime": "04:20",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /static",
+              "summary": "GET /static HTTP requests spiked to nearly 4K req/s around 04:20 UTC then stabilized near 1K req/s."
+            },
+            "truth": {
+              "peak": "3.38K req/s",
+              "time": "04:19",
+              "threshold": "no threshold",
+              "top": "GET /static"
+            }
+          },
+          {
+            "panel": "p016",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 4.5,
+            "timeErrMin": 55,
+            "said": {
+              "peak": {
+                "value": 4000,
+                "unit": "req/s"
+              },
+              "peakTime": "18:00",
+              "thresholdCrossed": "yes",
+              "topSeries": "GET /health",
+              "summary": "gRPC calls spike above the red threshold near 18:00 UTC, driven by GET /health."
+            },
+            "truth": {
+              "peak": "3.83K req/s",
+              "time": "17:05",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          },
+          {
+            "panel": "p020",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 2.5,
+            "timeErrMin": 50,
+            "said": {
+              "peak": {
+                "value": 40,
+                "unit": "%"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no",
+              "topSeries": "node-c3",
+              "summary": "Error ratios for node-a1, node-d4, and node-c3 stay around 10-20% until a sharp spike near 12:00 reaches about 40%, remaining below the 50% threshold."
+            },
+            "truth": {
+              "peak": "39.01%",
+              "time": "12:50",
+              "threshold": "no",
+              "top": "node-a1"
+            }
+          },
+          {
+            "panel": "p022",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -1.2,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 75,
+                "unit": "req/s"
+              },
+              "peakTime": "02:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "Queue consumer rate spikes sharply at 02:00 UTC before stabilizing around 40-50 req/s."
+            },
+            "truth": {
+              "peak": "75.92 req/s",
+              "time": "01:58",
+              "threshold": "no threshold",
+              "top": "GET /static"
+            }
+          },
+          {
+            "panel": "p025",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 8,
+            "timeErrMin": 1,
+            "said": {
+              "peak": {
+                "value": 1.5,
+                "unit": "GiB"
+              },
+              "peakTime": "04:42",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "Worker container RSS spikes to about 1.5 GiB shortly after 04:40 UTC then settles near 512 MiB."
+            },
+            "truth": {
+              "peak": "1.39 GiB",
+              "time": "04:43",
+              "threshold": "no threshold",
+              "top": "worker-5c6b-z9p2"
+            }
+          },
+          {
+            "panel": "p026",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 16.1,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 300,
+                "unit": "ms"
+              },
+              "peakTime": "00:25",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "search",
+              "summary": "DB query p95 latency for search fluctuates around 100 ms with a spike to ~300 ms near 00:25 UTC."
+            },
+            "truth": {
+              "peak": "258.37 ms",
+              "time": "00:25",
+              "threshold": "no threshold",
+              "top": "search"
+            }
+          },
+          {
+            "panel": "p034",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 0.2,
+            "timeErrMin": 8,
+            "said": {
+              "peak": {
+                "value": 3.2,
+                "unit": "GiB"
+              },
+              "peakTime": "08:30",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "api-66t4-ntr8",
+              "summary": "Container RSS memory spikes to about 3.2 GiB at 08:30 UTC, primarily driven by the api container, with no threshold configured."
+            },
+            "truth": {
+              "peak": "3.19 GiB",
+              "time": "08:22",
+              "threshold": "no threshold",
+              "top": "worker-5c6b-h3t7"
+            }
+          },
+          {
+            "panel": "p036",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -9.8,
+            "timeErrMin": 1,
+            "said": {
+              "peak": {
+                "value": 128,
+                "unit": "MiB"
+              },
+              "peakTime": "17:10",
+              "thresholdCrossed": "yes",
+              "topSeries": "api-64f4-n1r8",
+              "summary": "Page cache usage spiked to 128 MiB around 17:10 UTC, exceeding the 64 MiB threshold."
+            },
+            "truth": {
+              "peak": "141.92 MiB",
+              "time": "17:11",
+              "threshold": "yes",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p042",
+            "run": 1,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": 2.7,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 12500,
+                "unit": "req/s"
+              },
+              "peakTime": "02:03",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "API throughput shows a large spike in GET /api/search traffic around 02:03 UTC reaching near 12.5K req/s."
+            },
+            "truth": {
+              "peak": "12.17K req/s",
+              "time": "02:03",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          },
+          {
+            "panel": "p041",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -6.6,
+            "timeErrMin": 1,
+            "said": {
+              "peak": {
+                "value": 6,
+                "unit": "GiB"
+              },
+              "peakTime": "09:42",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "Page cache usage spikes to about 6 GiB around 09:42 UTC, primarily driven by worker-5c6b-z9p2."
+            },
+            "truth": {
+              "peak": "6.42 GiB",
+              "time": "09:43",
+              "threshold": "no threshold",
+              "top": "worker-5c6b-z9p2"
+            }
+          }
+        ]
+      }
+    },
+    "qwen3.8-max": {
+      "0.05": {
+        "reads": 300,
+        "wrong": 109,
+        "caught": 90,
+        "missed": 19,
+        "rightFlagged": 0,
+        "confirmed": 210,
+        "confirmedWrong": 19,
+        "missedBy": {
+          "series": 15,
+          "time": 4
+        },
+        "missedExamples": [
+          {
+            "panel": "p008",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 1.1,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 95,
+                "unit": "%"
+              },
+              "peakTime": "14:50",
+              "thresholdCrossed": "yes",
+              "topSeries": "node-b2",
+              "summary": "Error ratio on node-b2 spiked from a ~30% baseline to ~95% around 14:50 UTC, crossing the 65% threshold for roughly 30 minutes before recovering by ~15:30."
+            },
+            "truth": {
+              "peak": "93.94%",
+              "time": "14:52",
+              "threshold": "yes",
+              "top": "node-c3"
+            }
+          },
+          {
+            "panel": "p018",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 0.9,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 7000,
+                "unit": "req/s"
+              },
+              "peakTime": "11:30",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "POST /login",
+              "summary": "HTTP request rate peaked near 7K req/s around 11:30 UTC driven by the POST /login band (baseline ~3.5K req/s), with no threshold configured; traffic returned to baseline by ~13:00."
+            },
+            "truth": {
+              "peak": "6.94K req/s",
+              "time": "11:30",
+              "threshold": "no threshold",
+              "top": "POST /api/cart"
+            }
+          },
+          {
+            "panel": "p020",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 2.5,
+            "timeErrMin": 5,
+            "said": {
+              "peak": {
+                "value": 40,
+                "unit": "%"
+              },
+              "peakTime": "12:45",
+              "thresholdCrossed": "no",
+              "topSeries": "node-c3",
+              "summary": "Error ratio held steady at 10-20% across all nodes until ~11:00, then spiked to a ~40% peak around 12:45 (node-c3 highest), still approaching but not crossing the 50% threshold; errors remain elevated at ~25% at the end of the window."
+            },
+            "truth": {
+              "peak": "39.01%",
+              "time": "12:50",
+              "threshold": "no",
+              "top": "node-a1"
+            }
+          },
+          {
+            "panel": "p048",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 3.5,
+            "timeErrMin": 6,
+            "said": {
+              "peak": {
+                "value": 3,
+                "unit": "GiB"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "JVM heap used is steady around 1-1.4 GiB for both series until a sharp spike to ~3 GiB (top of stack) just before 12:00, driven mainly by worker-5c6b-z9p2."
+            },
+            "truth": {
+              "peak": "2.9 GiB",
+              "time": "12:06",
+              "threshold": "no threshold",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p053",
+            "run": 1,
+            "wrong": [
+              "time"
+            ],
+            "valueErrPct": -0.6,
+            "timeErrMin": 12,
+            "said": {
+              "peak": {
+                "value": 60,
+                "unit": "%"
+              },
+              "peakTime": "12:07",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "node-d4",
+              "summary": "Error ratio on node-d4 spiked to ~60% around 12:07 then settled to ~25-30%, while node-a1 stayed flat near ~8%; no threshold line is shown."
+            },
+            "truth": {
+              "peak": "60.34%",
+              "time": "11:55",
+              "threshold": "no threshold",
+              "top": "node-d4"
+            }
+          },
+          {
+            "panel": "p083",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 1.4,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 90,
+                "unit": "MiB"
+              },
+              "peakTime": "01:10",
+              "thresholdCrossed": "no",
+              "topSeries": "web-7d9f-q8m1",
+              "summary": "Memory working set for two pods stays around 25-40 MiB with a brief spike to ~90 MiB at ~01:10, remaining below the ~125 MiB threshold."
+            },
+            "truth": {
+              "peak": "88.79 MiB",
+              "time": "01:12",
+              "threshold": "no",
+              "top": "api-66f4-w5d0"
+            }
+          },
+          {
+            "panel": "p082",
+            "run": 1,
+            "wrong": [
+              "time"
+            ],
+            "valueErrPct": -0.5,
+            "timeErrMin": 95,
+            "said": {
+              "peak": {
+                "value": 2,
+                "unit": "s"
+              },
+              "peakTime": "09:00",
+              "thresholdCrossed": "no",
+              "topSeries": "search",
+              "summary": "Checkout latency p95: search is the highest series (~1s), spiking to ~2s near the end of the window but staying below the ~3s threshold; orders and inventory remain near 200-400ms."
+            },
+            "truth": {
+              "peak": "2.01 s",
+              "time": "10:35",
+              "threshold": "no",
+              "top": "search"
+            }
+          },
+          {
+            "panel": "p008",
+            "run": 2,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 1.1,
+            "timeErrMin": 7,
+            "said": {
+              "peak": {
+                "value": 95,
+                "unit": "%"
+              },
+              "peakTime": "14:45",
+              "thresholdCrossed": "yes",
+              "topSeries": "node-b2",
+              "summary": "Error ratio on node-b2 spiked from a ~30% baseline to ~95% around 14:45 UTC, crossing the 65% threshold, before returning to baseline by ~15:15; node-c3 stayed flat at ~7%."
+            },
+            "truth": {
+              "peak": "93.94%",
+              "time": "14:52",
+              "threshold": "yes",
+              "top": "node-c3"
+            }
+          },
+          {
+            "panel": "p018",
+            "run": 2,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 0.9,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 7000,
+                "unit": "req/s"
+              },
+              "peakTime": "11:30",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "POST /login",
+              "summary": "HTTP request rate stacked by endpoint peaks at ~7K req/s around 11:30 UTC (baseline ~3.5K req/s), driven by a surge in the POST /login band; no threshold is shown."
+            },
+            "truth": {
+              "peak": "6.94K req/s",
+              "time": "11:30",
+              "threshold": "no threshold",
+              "top": "POST /api/cart"
+            }
+          },
+          {
+            "panel": "p020",
+            "run": 2,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 2.5,
+            "timeErrMin": 5,
+            "said": {
+              "peak": {
+                "value": 40,
+                "unit": "%"
+              },
+              "peakTime": "12:45",
+              "thresholdCrossed": "no",
+              "topSeries": "node-c3",
+              "summary": "Error ratio steady at ~10-18% across all nodes until ~11:00, then spiking to a ~40% peak around 12:45 (node-c3 highest), still below the 50% threshold but sharply rising."
+            },
+            "truth": {
+              "peak": "39.01%",
+              "time": "12:50",
+              "threshold": "no",
+              "top": "node-a1"
+            }
+          },
+          {
+            "panel": "p048",
+            "run": 2,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 3.5,
+            "timeErrMin": 6,
+            "said": {
+              "peak": {
+                "value": 3,
+                "unit": "GiB"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "JVM heap used was steady around 1 GiB per series until a sharp spike to ~3 GiB (stack top) just before 12:00, with worker-5c6b-z9p2 the larger contributor; no threshold shown."
+            },
+            "truth": {
+              "peak": "2.9 GiB",
+              "time": "12:06",
+              "threshold": "no threshold",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p053",
+            "run": 2,
+            "wrong": [
+              "time"
+            ],
+            "valueErrPct": -0.6,
+            "timeErrMin": 12,
+            "said": {
+              "peak": {
+                "value": 60,
+                "unit": "%"
+              },
+              "peakTime": "12:07",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "node-d4",
+              "summary": "Error ratio panel: node-d4 spiked to ~60% around 12:07 then settled to ~25-30%, while node-a1 stayed flat near ~8%; no threshold line is drawn."
+            },
+            "truth": {
+              "peak": "60.34%",
+              "time": "11:55",
+              "threshold": "no threshold",
+              "top": "node-d4"
+            }
+          }
+        ]
+      },
+      "0.1": {
+        "reads": 300,
+        "wrong": 109,
+        "caught": 58,
+        "missed": 51,
+        "rightFlagged": 0,
+        "confirmed": 242,
+        "confirmedWrong": 51,
+        "missedBy": {
+          "value": 32,
+          "series": 15,
+          "time": 4
+        },
+        "missedExamples": [
+          {
+            "panel": "p003",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -6.2,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 20000,
+                "unit": "req/s"
+              },
+              "peakTime": "14:30",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "POST /login",
+              "summary": "HTTP request rates by endpoint; POST /login spiked to ~20K req/s around 14:30 UTC while other endpoints stayed near baseline (search ~8-9K, static ~5K, orders ~2K req/s)."
+            },
+            "truth": {
+              "peak": "21.33K req/s",
+              "time": "14:28",
+              "threshold": "no threshold",
+              "top": "POST /login"
+            }
+          },
+          {
+            "panel": "p008",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 1.1,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 95,
+                "unit": "%"
+              },
+              "peakTime": "14:50",
+              "thresholdCrossed": "yes",
+              "topSeries": "node-b2",
+              "summary": "Error ratio on node-b2 spiked from a ~30% baseline to ~95% around 14:50 UTC, crossing the 65% threshold for roughly 30 minutes before recovering by ~15:30."
+            },
+            "truth": {
+              "peak": "93.94%",
+              "time": "14:52",
+              "threshold": "yes",
+              "top": "node-c3"
+            }
+          },
+          {
+            "panel": "p018",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 0.9,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 7000,
+                "unit": "req/s"
+              },
+              "peakTime": "11:30",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "POST /login",
+              "summary": "HTTP request rate peaked near 7K req/s around 11:30 UTC driven by the POST /login band (baseline ~3.5K req/s), with no threshold configured; traffic returned to baseline by ~13:00."
+            },
+            "truth": {
+              "peak": "6.94K req/s",
+              "time": "11:30",
+              "threshold": "no threshold",
+              "top": "POST /api/cart"
+            }
+          },
+          {
+            "panel": "p020",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 2.5,
+            "timeErrMin": 5,
+            "said": {
+              "peak": {
+                "value": 40,
+                "unit": "%"
+              },
+              "peakTime": "12:45",
+              "thresholdCrossed": "no",
+              "topSeries": "node-c3",
+              "summary": "Error ratio held steady at 10-20% across all nodes until ~11:00, then spiked to a ~40% peak around 12:45 (node-c3 highest), still approaching but not crossing the 50% threshold; errors remain elevated at ~25% at the end of the window."
+            },
+            "truth": {
+              "peak": "39.01%",
+              "time": "12:50",
+              "threshold": "no",
+              "top": "node-a1"
+            }
+          },
+          {
+            "panel": "p025",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 8,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 1.5,
+                "unit": "GiB"
+              },
+              "peakTime": "04:45",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "Container RSS: worker-5c6b-z9p2 spiked to ~1.5 GiB around 04:45 then settled to ~512-600 MiB by 04:50; all other containers stayed stable between ~128 MiB and ~300 MiB with no threshold defined."
+            },
+            "truth": {
+              "peak": "1.39 GiB",
+              "time": "04:43",
+              "threshold": "no threshold",
+              "top": "worker-5c6b-z9p2"
+            }
+          },
+          {
+            "panel": "p029",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 8.7,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 400,
+                "unit": "MiB"
+              },
+              "peakTime": "22:50",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "api-66f4-n1fr8",
+              "summary": "Container RSS: api-66f4-n1fr8 spiked from ~170 MiB to a peak near 370-400 MiB around 22:50 UTC then returned to baseline by 23:00; worker-5c6b-h3t7 stayed flat near ~30 MiB."
+            },
+            "truth": {
+              "peak": "367.92 MiB",
+              "time": "22:50",
+              "threshold": "no threshold",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p036",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -9.8,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 128,
+                "unit": "MiB"
+              },
+              "peakTime": "17:11",
+              "thresholdCrossed": "yes",
+              "topSeries": "api-66f4-n1r8",
+              "summary": "Page cache peaked near 128 MiB around 17:11, driven by the api-66f4-n1r8 series and crossing the ~80 MiB threshold, then settled back below it by ~17:20."
+            },
+            "truth": {
+              "peak": "141.92 MiB",
+              "time": "17:11",
+              "threshold": "yes",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p048",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 3.5,
+            "timeErrMin": 6,
+            "said": {
+              "peak": {
+                "value": 3,
+                "unit": "GiB"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "JVM heap used is steady around 1-1.4 GiB for both series until a sharp spike to ~3 GiB (top of stack) just before 12:00, driven mainly by worker-5c6b-z9p2."
+            },
+            "truth": {
+              "peak": "2.9 GiB",
+              "time": "12:06",
+              "threshold": "no threshold",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p053",
+            "run": 1,
+            "wrong": [
+              "time"
+            ],
+            "valueErrPct": -0.6,
+            "timeErrMin": 12,
+            "said": {
+              "peak": {
+                "value": 60,
+                "unit": "%"
+              },
+              "peakTime": "12:07",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "node-d4",
+              "summary": "Error ratio on node-d4 spiked to ~60% around 12:07 then settled to ~25-30%, while node-a1 stayed flat near ~8%; no threshold line is shown."
+            },
+            "truth": {
+              "peak": "60.34%",
+              "time": "11:55",
+              "threshold": "no threshold",
+              "top": "node-d4"
+            }
+          },
+          {
+            "panel": "p065",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -5.6,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 50,
+                "unit": "%"
+              },
+              "peakTime": "03:10",
+              "thresholdCrossed": "no",
+              "topSeries": "node-c3",
+              "summary": "CPU usage with a brief spike on node-c3 to ~50% around 03:10, staying below the ~75% threshold; other nodes idle at 10-20%."
+            },
+            "truth": {
+              "peak": "52.95%",
+              "time": "03:08",
+              "threshold": "no",
+              "top": "node-c3"
+            }
+          },
+          {
+            "panel": "p083",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 1.4,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 90,
+                "unit": "MiB"
+              },
+              "peakTime": "01:10",
+              "thresholdCrossed": "no",
+              "topSeries": "web-7d9f-q8m1",
+              "summary": "Memory working set for two pods stays around 25-40 MiB with a brief spike to ~90 MiB at ~01:10, remaining below the ~125 MiB threshold."
+            },
+            "truth": {
+              "peak": "88.79 MiB",
+              "time": "01:12",
+              "threshold": "no",
+              "top": "api-66f4-w5d0"
+            }
+          },
+          {
+            "panel": "p082",
+            "run": 1,
+            "wrong": [
+              "time"
+            ],
+            "valueErrPct": -0.5,
+            "timeErrMin": 95,
+            "said": {
+              "peak": {
+                "value": 2,
+                "unit": "s"
+              },
+              "peakTime": "09:00",
+              "thresholdCrossed": "no",
+              "topSeries": "search",
+              "summary": "Checkout latency p95: search is the highest series (~1s), spiking to ~2s near the end of the window but staying below the ~3s threshold; orders and inventory remain near 200-400ms."
+            },
+            "truth": {
+              "peak": "2.01 s",
+              "time": "10:35",
+              "threshold": "no",
+              "top": "search"
+            }
+          }
+        ]
+      },
+      "0.2": {
+        "reads": 300,
+        "wrong": 109,
+        "caught": 43,
+        "missed": 66,
+        "rightFlagged": 0,
+        "confirmed": 257,
+        "confirmedWrong": 66,
+        "missedBy": {
+          "value": 47,
+          "series": 15,
+          "time": 4
+        },
+        "missedExamples": [
+          {
+            "panel": "p003",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -6.2,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 20000,
+                "unit": "req/s"
+              },
+              "peakTime": "14:30",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "POST /login",
+              "summary": "HTTP request rates by endpoint; POST /login spiked to ~20K req/s around 14:30 UTC while other endpoints stayed near baseline (search ~8-9K, static ~5K, orders ~2K req/s)."
+            },
+            "truth": {
+              "peak": "21.33K req/s",
+              "time": "14:28",
+              "threshold": "no threshold",
+              "top": "POST /login"
+            }
+          },
+          {
+            "panel": "p008",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 1.1,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 95,
+                "unit": "%"
+              },
+              "peakTime": "14:50",
+              "thresholdCrossed": "yes",
+              "topSeries": "node-b2",
+              "summary": "Error ratio on node-b2 spiked from a ~30% baseline to ~95% around 14:50 UTC, crossing the 65% threshold for roughly 30 minutes before recovering by ~15:30."
+            },
+            "truth": {
+              "peak": "93.94%",
+              "time": "14:52",
+              "threshold": "yes",
+              "top": "node-c3"
+            }
+          },
+          {
+            "panel": "p014",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -11.1,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 1,
+                "unit": "GiB"
+              },
+              "peakTime": "16:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "web-7d9f-q8m1",
+              "summary": "Redis used memory across 4 nodes was stable around 400-500 MiB total until ~15:15, then spiked to a ~1 GiB peak around 16:00 (driven by web-7d9f-q8m1) before declining toward ~512 MiB; no threshold is configured."
+            },
+            "truth": {
+              "peak": "1.13 GiB",
+              "time": "15:58",
+              "threshold": "no threshold",
+              "top": "web-7d9f-q8m1"
+            }
+          },
+          {
+            "panel": "p018",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 0.9,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 7000,
+                "unit": "req/s"
+              },
+              "peakTime": "11:30",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "POST /login",
+              "summary": "HTTP request rate peaked near 7K req/s around 11:30 UTC driven by the POST /login band (baseline ~3.5K req/s), with no threshold configured; traffic returned to baseline by ~13:00."
+            },
+            "truth": {
+              "peak": "6.94K req/s",
+              "time": "11:30",
+              "threshold": "no threshold",
+              "top": "POST /api/cart"
+            }
+          },
+          {
+            "panel": "p020",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 2.5,
+            "timeErrMin": 5,
+            "said": {
+              "peak": {
+                "value": 40,
+                "unit": "%"
+              },
+              "peakTime": "12:45",
+              "thresholdCrossed": "no",
+              "topSeries": "node-c3",
+              "summary": "Error ratio held steady at 10-20% across all nodes until ~11:00, then spiked to a ~40% peak around 12:45 (node-c3 highest), still approaching but not crossing the 50% threshold; errors remain elevated at ~25% at the end of the window."
+            },
+            "truth": {
+              "peak": "39.01%",
+              "time": "12:50",
+              "threshold": "no",
+              "top": "node-a1"
+            }
+          },
+          {
+            "panel": "p026",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 16.1,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 300,
+                "unit": "ms"
+              },
+              "peakTime": "00:25",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "search",
+              "summary": "DB query time p95 for 'search' hovers around 60-100 ms with a brief bump to ~300 ms around 00:25 UTC before returning to baseline; no threshold shown."
+            },
+            "truth": {
+              "peak": "258.37 ms",
+              "time": "00:25",
+              "threshold": "no threshold",
+              "top": "search"
+            }
+          },
+          {
+            "panel": "p025",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 8,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 1.5,
+                "unit": "GiB"
+              },
+              "peakTime": "04:45",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "Container RSS: worker-5c6b-z9p2 spiked to ~1.5 GiB around 04:45 then settled to ~512-600 MiB by 04:50; all other containers stayed stable between ~128 MiB and ~300 MiB with no threshold defined."
+            },
+            "truth": {
+              "peak": "1.39 GiB",
+              "time": "04:43",
+              "threshold": "no threshold",
+              "top": "worker-5c6b-z9p2"
+            }
+          },
+          {
+            "panel": "p029",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 8.7,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 400,
+                "unit": "MiB"
+              },
+              "peakTime": "22:50",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "api-66f4-n1fr8",
+              "summary": "Container RSS: api-66f4-n1fr8 spiked from ~170 MiB to a peak near 370-400 MiB around 22:50 UTC then returned to baseline by 23:00; worker-5c6b-h3t7 stayed flat near ~30 MiB."
+            },
+            "truth": {
+              "peak": "367.92 MiB",
+              "time": "22:50",
+              "threshold": "no threshold",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p036",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -9.8,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 128,
+                "unit": "MiB"
+              },
+              "peakTime": "17:11",
+              "thresholdCrossed": "yes",
+              "topSeries": "api-66f4-n1r8",
+              "summary": "Page cache peaked near 128 MiB around 17:11, driven by the api-66f4-n1r8 series and crossing the ~80 MiB threshold, then settled back below it by ~17:20."
+            },
+            "truth": {
+              "peak": "141.92 MiB",
+              "time": "17:11",
+              "threshold": "yes",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p048",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 3.5,
+            "timeErrMin": 6,
+            "said": {
+              "peak": {
+                "value": 3,
+                "unit": "GiB"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "JVM heap used is steady around 1-1.4 GiB for both series until a sharp spike to ~3 GiB (top of stack) just before 12:00, driven mainly by worker-5c6b-z9p2."
+            },
+            "truth": {
+              "peak": "2.9 GiB",
+              "time": "12:06",
+              "threshold": "no threshold",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p053",
+            "run": 1,
+            "wrong": [
+              "time"
+            ],
+            "valueErrPct": -0.6,
+            "timeErrMin": 12,
+            "said": {
+              "peak": {
+                "value": 60,
+                "unit": "%"
+              },
+              "peakTime": "12:07",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "node-d4",
+              "summary": "Error ratio on node-d4 spiked to ~60% around 12:07 then settled to ~25-30%, while node-a1 stayed flat near ~8%; no threshold line is shown."
+            },
+            "truth": {
+              "peak": "60.34%",
+              "time": "11:55",
+              "threshold": "no threshold",
+              "top": "node-d4"
+            }
+          },
+          {
+            "panel": "p064",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -18.4,
+            "timeErrMin": 6,
+            "said": {
+              "peak": {
+                "value": 150,
+                "unit": "req/s"
+              },
+              "peakTime": "06:20",
+              "thresholdCrossed": "yes",
+              "topSeries": "GET /api/orders",
+              "summary": "API throughput stacked by endpoint stays near 100 req/s total but spikes to ~150 req/s around 06:20, briefly crossing the red threshold line, driven mainly by GET /api/orders."
+            },
+            "truth": {
+              "peak": "183.73 req/s",
+              "time": "06:26",
+              "threshold": "yes",
+              "top": "GET /api/orders"
+            }
+          }
+        ]
+      }
+    },
+    "gemma-4-31B-it": {
+      "0.05": {
+        "reads": 300,
+        "wrong": 111,
+        "caught": 98,
+        "missed": 13,
+        "rightFlagged": 0,
+        "confirmed": 202,
+        "confirmedWrong": 13,
+        "missedBy": {
+          "series": 9,
+          "threshold": 3,
+          "time": 1
+        },
+        "missedExamples": [
+          {
+            "panel": "p008",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -4.2,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 90,
+                "unit": "%"
+              },
+              "peakTime": "14:50",
+              "thresholdCrossed": "yes",
+              "topSeries": "node-b2",
+              "summary": "Error ratio spiked to 90% around 14:50, crossing the 65% threshold, primarily driven by node-b2."
+            },
+            "truth": {
+              "peak": "93.94%",
+              "time": "14:52",
+              "threshold": "yes",
+              "top": "node-c3"
+            }
+          },
+          {
+            "panel": "p022",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -1.2,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 75,
+                "unit": "req/s"
+              },
+              "peakTime": "01:55",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "Queue consumer rate peaked at 75 req/s around 01:55, driven primarily by GET /api/search."
+            },
+            "truth": {
+              "peak": "75.92 req/s",
+              "time": "01:58",
+              "threshold": "no threshold",
+              "top": "GET /static"
+            }
+          },
+          {
+            "panel": "p042",
+            "run": 1,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": 0.3,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 12200,
+                "unit": "req/s"
+              },
+              "peakTime": "02:03",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "API throughput peaked at approximately 12.2K req/s around 02:03, driven primarily by /api/search."
+            },
+            "truth": {
+              "peak": "12.17K req/s",
+              "time": "02:03",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          },
+          {
+            "panel": "p048",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 0,
+            "timeErrMin": 6,
+            "said": {
+              "peak": {
+                "value": 2.9,
+                "unit": "GiB"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "JVM heap usage spiked to nearly 3 GiB around 12:00 UTC, driven primarily by the worker-5c6b-z9p2 series."
+            },
+            "truth": {
+              "peak": "2.9 GiB",
+              "time": "12:06",
+              "threshold": "no threshold",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p008",
+            "run": 2,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -4.2,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 90,
+                "unit": "%"
+              },
+              "peakTime": "14:50",
+              "thresholdCrossed": "yes",
+              "topSeries": "node-b2",
+              "summary": "Error ratio spiked to 90% around 14:50, crossing the 65% threshold on node-b2."
+            },
+            "truth": {
+              "peak": "93.94%",
+              "time": "14:52",
+              "threshold": "yes",
+              "top": "node-c3"
+            }
+          },
+          {
+            "panel": "p022",
+            "run": 2,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -1.2,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 75,
+                "unit": "req/s"
+              },
+              "peakTime": "01:55",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "Queue consumer rate peaked at 75 req/s around 01:55, primarily driven by GET /api/search."
+            },
+            "truth": {
+              "peak": "75.92 req/s",
+              "time": "01:58",
+              "threshold": "no threshold",
+              "top": "GET /static"
+            }
+          },
+          {
+            "panel": "p048",
+            "run": 2,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 0,
+            "timeErrMin": 6,
+            "said": {
+              "peak": {
+                "value": 2.9,
+                "unit": "GiB"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "JVM heap usage spiked sharply for both api and worker instances around 12:00 UTC."
+            },
+            "truth": {
+              "peak": "2.9 GiB",
+              "time": "12:06",
+              "threshold": "no threshold",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p042",
+            "run": 2,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": -1.4,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 12000,
+                "unit": "req/s"
+              },
+              "peakTime": "02:03",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "API throughput peaked at approximately 12K req/s around 02:03, driven primarily by GET /api/search."
+            },
+            "truth": {
+              "peak": "12.17K req/s",
+              "time": "02:03",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          },
+          {
+            "panel": "p085",
+            "run": 2,
+            "wrong": [
+              "time"
+            ],
+            "valueErrPct": 2.1,
+            "timeErrMin": 5,
+            "said": {
+              "peak": {
+                "value": 140,
+                "unit": "MiB"
+              },
+              "peakTime": "15:20",
+              "thresholdCrossed": "yes",
+              "topSeries": "api-66f4-n1r8",
+              "summary": "Memory working set for api-66f4-n1r8 spiked above the threshold around 15:20 UTC."
+            },
+            "truth": {
+              "peak": "137.1 MiB",
+              "time": "15:25",
+              "threshold": "yes",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p008",
+            "run": 3,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -4.2,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 90,
+                "unit": "%"
+              },
+              "peakTime": "14:50",
+              "thresholdCrossed": "yes",
+              "topSeries": "node-b2",
+              "summary": "Error ratio spiked to 90% around 14:50, crossing the 65% threshold, primarily driven by node-b2."
+            },
+            "truth": {
+              "peak": "93.94%",
+              "time": "14:52",
+              "threshold": "yes",
+              "top": "node-c3"
+            }
+          },
+          {
+            "panel": "p022",
+            "run": 3,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -1.2,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 75,
+                "unit": "req/s"
+              },
+              "peakTime": "01:55",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "Queue consumer rate peaked at 75 req/s around 01:55, driven primarily by GET /api/search."
+            },
+            "truth": {
+              "peak": "75.92 req/s",
+              "time": "01:58",
+              "threshold": "no threshold",
+              "top": "GET /static"
+            }
+          },
+          {
+            "panel": "p042",
+            "run": 3,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": -1.4,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 12000,
+                "unit": "req/s"
+              },
+              "peakTime": "02:03",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "API throughput peaked at 12k req/s around 02:03, driven primarily by GET /api/search."
+            },
+            "truth": {
+              "peak": "12.17K req/s",
+              "time": "02:03",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          }
+        ]
+      },
+      "0.1": {
+        "reads": 300,
+        "wrong": 111,
+        "caught": 54,
+        "missed": 57,
+        "rightFlagged": 0,
+        "confirmed": 246,
+        "confirmedWrong": 57,
+        "missedBy": {
+          "value": 41,
+          "series": 9,
+          "threshold": 3,
+          "value+threshold+series": 3,
+          "time": 1
+        },
+        "missedExamples": [
+          {
+            "panel": "p003",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -6.2,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 20000,
+                "unit": "req/s"
+              },
+              "peakTime": "14:30",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "POST /login",
+              "summary": "HTTP requests show a significant spike in POST /login around 14:30 UTC."
+            },
+            "truth": {
+              "peak": "21.33K req/s",
+              "time": "14:28",
+              "threshold": "no threshold",
+              "top": "POST /login"
+            }
+          },
+          {
+            "panel": "p005",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 9,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 200,
+                "unit": "req/s"
+              },
+              "peakTime": "20:15",
+              "thresholdCrossed": "no",
+              "topSeries": "POST /api/cart",
+              "summary": "gRPC calls show a spike in POST /api/cart around 20:15, peaking at approximately 200 req/s."
+            },
+            "truth": {
+              "peak": "183.46 req/s",
+              "time": "20:12",
+              "threshold": "no",
+              "top": "POST /api/cart"
+            }
+          },
+          {
+            "panel": "p008",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -4.2,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 90,
+                "unit": "%"
+              },
+              "peakTime": "14:50",
+              "thresholdCrossed": "yes",
+              "topSeries": "node-b2",
+              "summary": "Error ratio spiked to 90% around 14:50, crossing the 65% threshold, primarily driven by node-b2."
+            },
+            "truth": {
+              "peak": "93.94%",
+              "time": "14:52",
+              "threshold": "yes",
+              "top": "node-c3"
+            }
+          },
+          {
+            "panel": "p010",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -9.3,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 300,
+                "unit": "ms"
+              },
+              "peakTime": "17:38",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "auth",
+              "summary": "Request duration p99 for auth service is spiking towards the end of the period, while payments remains stable around 100ms."
+            },
+            "truth": {
+              "peak": "330.77 ms",
+              "time": "17:36",
+              "threshold": "no threshold",
+              "top": "auth"
+            }
+          },
+          {
+            "panel": "p022",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -1.2,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 75,
+                "unit": "req/s"
+              },
+              "peakTime": "01:55",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "Queue consumer rate peaked at 75 req/s around 01:55, driven primarily by GET /api/search."
+            },
+            "truth": {
+              "peak": "75.92 req/s",
+              "time": "01:58",
+              "threshold": "no threshold",
+              "top": "GET /static"
+            }
+          },
+          {
+            "panel": "p037",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -5.7,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 1500,
+                "unit": "req/s"
+              },
+              "peakTime": "06:00",
+              "thresholdCrossed": "yes",
+              "topSeries": "POST /login",
+              "summary": "HTTP requests for POST /login spiked above the 1k req/s threshold at 06:00 UTC."
+            },
+            "truth": {
+              "peak": "1.59K req/s",
+              "time": "05:58",
+              "threshold": "yes",
+              "top": "POST /login"
+            }
+          },
+          {
+            "panel": "p042",
+            "run": 1,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": 0.3,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 12200,
+                "unit": "req/s"
+              },
+              "peakTime": "02:03",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "API throughput peaked at approximately 12.2K req/s around 02:03, driven primarily by /api/search."
+            },
+            "truth": {
+              "peak": "12.17K req/s",
+              "time": "02:03",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          },
+          {
+            "panel": "p043",
+            "run": 1,
+            "wrong": [
+              "value",
+              "threshold",
+              "series"
+            ],
+            "valueErrPct": -6.7,
+            "timeErrMin": 10,
+            "said": {
+              "peak": {
+                "value": 16000,
+                "unit": "req/s"
+              },
+              "peakTime": "22:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "POST /api/cart",
+              "summary": "API throughput peaked at approximately 16K req/s around 22:00, driven primarily by POST /api/cart."
+            },
+            "truth": {
+              "peak": "17.15K req/s",
+              "time": "21:50",
+              "threshold": "yes",
+              "top": "GET /api/orders"
+            }
+          },
+          {
+            "panel": "p048",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 0,
+            "timeErrMin": 6,
+            "said": {
+              "peak": {
+                "value": 2.9,
+                "unit": "GiB"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "JVM heap usage spiked to nearly 3 GiB around 12:00 UTC, driven primarily by the worker-5c6b-z9p2 series."
+            },
+            "truth": {
+              "peak": "2.9 GiB",
+              "time": "12:06",
+              "threshold": "no threshold",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p050",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -6.4,
+            "timeErrMin": 1,
+            "said": {
+              "peak": {
+                "value": 2.1,
+                "unit": "s"
+              },
+              "peakTime": "17:45",
+              "thresholdCrossed": "no",
+              "topSeries": "orders",
+              "summary": "Request duration p99 for 'orders' is spiking rapidly since 17:00, though it remains below the 2.7s threshold."
+            },
+            "truth": {
+              "peak": "2.24 s",
+              "time": "17:44",
+              "threshold": "no",
+              "top": "orders"
+            }
+          },
+          {
+            "panel": "p056",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -5.5,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 7,
+                "unit": "GiB"
+              },
+              "peakTime": "10:15",
+              "thresholdCrossed": "no",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "Container RSS shows a significant spike in memory usage for the worker pod around 10:15, remaining below the 10 GiB threshold."
+            },
+            "truth": {
+              "peak": "7.41 GiB",
+              "time": "10:12",
+              "threshold": "no",
+              "top": "worker-5c6b-z9p2"
+            }
+          },
+          {
+            "panel": "p061",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -6,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 205,
+                "unit": "MiB"
+              },
+              "peakTime": "17:00",
+              "thresholdCrossed": "yes",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "JVM heap usage for worker-5c6b-z9p2 spiked sharply to 205 MiB at 17:00, crossing the critical threshold."
+            },
+            "truth": {
+              "peak": "217.97 MiB",
+              "time": "17:02",
+              "threshold": "yes",
+              "top": "worker-5c6b-z9p2"
+            }
+          }
+        ]
+      },
+      "0.2": {
+        "reads": 300,
+        "wrong": 111,
+        "caught": 45,
+        "missed": 66,
+        "rightFlagged": 0,
+        "confirmed": 255,
+        "confirmedWrong": 66,
+        "missedBy": {
+          "value": 50,
+          "series": 9,
+          "threshold": 3,
+          "value+threshold+series": 3,
+          "time": 1
+        },
+        "missedExamples": [
+          {
+            "panel": "p003",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -6.2,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 20000,
+                "unit": "req/s"
+              },
+              "peakTime": "14:30",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "POST /login",
+              "summary": "HTTP requests show a significant spike in POST /login around 14:30 UTC."
+            },
+            "truth": {
+              "peak": "21.33K req/s",
+              "time": "14:28",
+              "threshold": "no threshold",
+              "top": "POST /login"
+            }
+          },
+          {
+            "panel": "p005",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 9,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 200,
+                "unit": "req/s"
+              },
+              "peakTime": "20:15",
+              "thresholdCrossed": "no",
+              "topSeries": "POST /api/cart",
+              "summary": "gRPC calls show a spike in POST /api/cart around 20:15, peaking at approximately 200 req/s."
+            },
+            "truth": {
+              "peak": "183.46 req/s",
+              "time": "20:12",
+              "threshold": "no",
+              "top": "POST /api/cart"
+            }
+          },
+          {
+            "panel": "p008",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -4.2,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 90,
+                "unit": "%"
+              },
+              "peakTime": "14:50",
+              "thresholdCrossed": "yes",
+              "topSeries": "node-b2",
+              "summary": "Error ratio spiked to 90% around 14:50, crossing the 65% threshold, primarily driven by node-b2."
+            },
+            "truth": {
+              "peak": "93.94%",
+              "time": "14:52",
+              "threshold": "yes",
+              "top": "node-c3"
+            }
+          },
+          {
+            "panel": "p010",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -9.3,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 300,
+                "unit": "ms"
+              },
+              "peakTime": "17:38",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "auth",
+              "summary": "Request duration p99 for auth service is spiking towards the end of the period, while payments remains stable around 100ms."
+            },
+            "truth": {
+              "peak": "330.77 ms",
+              "time": "17:36",
+              "threshold": "no threshold",
+              "top": "auth"
+            }
+          },
+          {
+            "panel": "p022",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -1.2,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 75,
+                "unit": "req/s"
+              },
+              "peakTime": "01:55",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "Queue consumer rate peaked at 75 req/s around 01:55, driven primarily by GET /api/search."
+            },
+            "truth": {
+              "peak": "75.92 req/s",
+              "time": "01:58",
+              "threshold": "no threshold",
+              "top": "GET /static"
+            }
+          },
+          {
+            "panel": "p037",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -5.7,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 1500,
+                "unit": "req/s"
+              },
+              "peakTime": "06:00",
+              "thresholdCrossed": "yes",
+              "topSeries": "POST /login",
+              "summary": "HTTP requests for POST /login spiked above the 1k req/s threshold at 06:00 UTC."
+            },
+            "truth": {
+              "peak": "1.59K req/s",
+              "time": "05:58",
+              "threshold": "yes",
+              "top": "POST /login"
+            }
+          },
+          {
+            "panel": "p042",
+            "run": 1,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": 0.3,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 12200,
+                "unit": "req/s"
+              },
+              "peakTime": "02:03",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "API throughput peaked at approximately 12.2K req/s around 02:03, driven primarily by /api/search."
+            },
+            "truth": {
+              "peak": "12.17K req/s",
+              "time": "02:03",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          },
+          {
+            "panel": "p043",
+            "run": 1,
+            "wrong": [
+              "value",
+              "threshold",
+              "series"
+            ],
+            "valueErrPct": -6.7,
+            "timeErrMin": 10,
+            "said": {
+              "peak": {
+                "value": 16000,
+                "unit": "req/s"
+              },
+              "peakTime": "22:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "POST /api/cart",
+              "summary": "API throughput peaked at approximately 16K req/s around 22:00, driven primarily by POST /api/cart."
+            },
+            "truth": {
+              "peak": "17.15K req/s",
+              "time": "21:50",
+              "threshold": "yes",
+              "top": "GET /api/orders"
+            }
+          },
+          {
+            "panel": "p048",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 0,
+            "timeErrMin": 6,
+            "said": {
+              "peak": {
+                "value": 2.9,
+                "unit": "GiB"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "JVM heap usage spiked to nearly 3 GiB around 12:00 UTC, driven primarily by the worker-5c6b-z9p2 series."
+            },
+            "truth": {
+              "peak": "2.9 GiB",
+              "time": "12:06",
+              "threshold": "no threshold",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p050",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -6.4,
+            "timeErrMin": 1,
+            "said": {
+              "peak": {
+                "value": 2.1,
+                "unit": "s"
+              },
+              "peakTime": "17:45",
+              "thresholdCrossed": "no",
+              "topSeries": "orders",
+              "summary": "Request duration p99 for 'orders' is spiking rapidly since 17:00, though it remains below the 2.7s threshold."
+            },
+            "truth": {
+              "peak": "2.24 s",
+              "time": "17:44",
+              "threshold": "no",
+              "top": "orders"
+            }
+          },
+          {
+            "panel": "p056",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -5.5,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 7,
+                "unit": "GiB"
+              },
+              "peakTime": "10:15",
+              "thresholdCrossed": "no",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "Container RSS shows a significant spike in memory usage for the worker pod around 10:15, remaining below the 10 GiB threshold."
+            },
+            "truth": {
+              "peak": "7.41 GiB",
+              "time": "10:12",
+              "threshold": "no",
+              "top": "worker-5c6b-z9p2"
+            }
+          },
+          {
+            "panel": "p061",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -6,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 205,
+                "unit": "MiB"
+              },
+              "peakTime": "17:00",
+              "thresholdCrossed": "yes",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "JVM heap usage for worker-5c6b-z9p2 spiked sharply to 205 MiB at 17:00, crossing the critical threshold."
+            },
+            "truth": {
+              "peak": "217.97 MiB",
+              "time": "17:02",
+              "threshold": "yes",
+              "top": "worker-5c6b-z9p2"
+            }
+          }
+        ]
+      }
+    },
+    "llama-4-maverick": {
+      "0.05": {
+        "reads": 300,
+        "wrong": 236,
+        "caught": 214,
+        "missed": 22,
+        "rightFlagged": 0,
+        "confirmed": 86,
+        "confirmedWrong": 22,
+        "missedBy": {
+          "time": 9,
+          "series": 4,
+          "threshold": 6,
+          "time+threshold": 3
+        },
+        "missedExamples": [
+          {
+            "panel": "p017",
+            "run": 1,
+            "wrong": [
+              "time"
+            ],
+            "valueErrPct": -3.4,
+            "timeErrMin": 90,
+            "said": {
+              "peak": {
+                "value": 170,
+                "unit": "MiB"
+              },
+              "peakTime": "11:45",
+              "thresholdCrossed": "yes",
+              "topSeries": "api-66f4-w5d0",
+              "summary": "Page cache usage spiked to 170 MiB around 11:45 UTC, exceeding the 100 MiB threshold."
+            },
+            "truth": {
+              "peak": "176.04 MiB",
+              "time": "13:15",
+              "threshold": "yes",
+              "top": "api-66f4-w5d0"
+            }
+          },
+          {
+            "panel": "p020",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 2.5,
+            "timeErrMin": 50,
+            "said": {
+              "peak": {
+                "value": 40,
+                "unit": "%"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no",
+              "topSeries": "node-c3",
+              "summary": "Error ratio peaks at 40% around 12:00, mostly from node-c3."
+            },
+            "truth": {
+              "peak": "39.01%",
+              "time": "12:50",
+              "threshold": "no",
+              "top": "node-a1"
+            }
+          },
+          {
+            "panel": "p021",
+            "run": 1,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": 3.7,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 6,
+                "unit": "GiB"
+              },
+              "peakTime": "20:15",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "web-7d9f-x2k4",
+              "summary": "Redis used memory is spiking on one instance, web-7d9f-x2k4, around 20:15 UTC."
+            },
+            "truth": {
+              "peak": "5.78 GiB",
+              "time": "20:17",
+              "threshold": "yes",
+              "top": "web-7d9f-x2k4"
+            }
+          },
+          {
+            "panel": "p042",
+            "run": 1,
+            "wrong": [
+              "time",
+              "threshold"
+            ],
+            "valueErrPct": 2.7,
+            "timeErrMin": 4,
+            "said": {
+              "peak": {
+                "value": 12.5,
+                "unit": "K req/s"
+              },
+              "peakTime": "02:07",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "API throughput shows a spike at 02:07, mostly due to GET /api/search requests."
+            },
+            "truth": {
+              "peak": "12.17K req/s",
+              "time": "02:03",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          },
+          {
+            "panel": "p043",
+            "run": 1,
+            "wrong": [
+              "time"
+            ],
+            "valueErrPct": 5,
+            "timeErrMin": 80,
+            "said": {
+              "peak": {
+                "value": 18,
+                "unit": "K req/s"
+              },
+              "peakTime": "20:30",
+              "thresholdCrossed": "yes",
+              "topSeries": "GET /api/orders",
+              "summary": "API throughput spiked to 18K req/s at 20:30, mainly due to GET /api/orders."
+            },
+            "truth": {
+              "peak": "17.15K req/s",
+              "time": "21:50",
+              "threshold": "yes",
+              "top": "GET /api/orders"
+            }
+          },
+          {
+            "panel": "p054",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 2.7,
+            "timeErrMin": 40,
+            "said": {
+              "peak": {
+                "value": 125,
+                "unit": "MiB"
+              },
+              "peakTime": "09:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "JVM heap usage spiked to 125 MiB at 09:00 UTC across multiple workers."
+            },
+            "truth": {
+              "peak": "121.75 MiB",
+              "time": "09:40",
+              "threshold": "no threshold",
+              "top": "web-7d9f-q8m1"
+            }
+          },
+          {
+            "panel": "p067",
+            "run": 1,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": 0.6,
+            "timeErrMin": 1,
+            "said": {
+              "peak": {
+                "value": 100,
+                "unit": "%"
+              },
+              "peakTime": "14:30",
+              "thresholdCrossed": "yes",
+              "topSeries": "node-d4",
+              "summary": "Disk usage on node-d4 spiked to 100% at 14:30, while node-b2 remained stable around 20%."
+            },
+            "truth": {
+              "peak": "99.45%",
+              "time": "14:29",
+              "threshold": "no threshold",
+              "top": "node-d4"
+            }
+          },
+          {
+            "panel": "p082",
+            "run": 1,
+            "wrong": [
+              "time"
+            ],
+            "valueErrPct": -0.5,
+            "timeErrMin": 215,
+            "said": {
+              "peak": {
+                "value": 2,
+                "unit": "s"
+              },
+              "peakTime": "07:00",
+              "thresholdCrossed": "no",
+              "topSeries": "search",
+              "summary": "p95 checkout latency is stable around 1s with a spike at 07:00, still below the 5s threshold."
+            },
+            "truth": {
+              "peak": "2.01 s",
+              "time": "10:35",
+              "threshold": "no",
+              "top": "search"
+            }
+          },
+          {
+            "panel": "p017",
+            "run": 2,
+            "wrong": [
+              "time"
+            ],
+            "valueErrPct": -3.4,
+            "timeErrMin": 90,
+            "said": {
+              "peak": {
+                "value": 170,
+                "unit": "MiB"
+              },
+              "peakTime": "11:45",
+              "thresholdCrossed": "yes",
+              "topSeries": "api-66f4-w5d0",
+              "summary": "Page cache usage spiked to 170 MiB around 11:45 UTC, exceeding the 100 MiB threshold."
+            },
+            "truth": {
+              "peak": "176.04 MiB",
+              "time": "13:15",
+              "threshold": "yes",
+              "top": "api-66f4-w5d0"
+            }
+          },
+          {
+            "panel": "p021",
+            "run": 2,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": 3.7,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 6,
+                "unit": "GiB"
+              },
+              "peakTime": "20:15",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "web-7d9f-x2k4",
+              "summary": "Redis used memory is spiking on one instance, web-7d9f-x2k4, around 20:15 UTC."
+            },
+            "truth": {
+              "peak": "5.78 GiB",
+              "time": "20:17",
+              "threshold": "yes",
+              "top": "web-7d9f-x2k4"
+            }
+          },
+          {
+            "panel": "p042",
+            "run": 2,
+            "wrong": [
+              "time",
+              "threshold"
+            ],
+            "valueErrPct": 2.7,
+            "timeErrMin": 4,
+            "said": {
+              "peak": {
+                "value": 12.5,
+                "unit": "K req/s"
+              },
+              "peakTime": "02:07",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "API throughput shows a spike at 02:07, mostly due to GET /api/search requests."
+            },
+            "truth": {
+              "peak": "12.17K req/s",
+              "time": "02:03",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          },
+          {
+            "panel": "p043",
+            "run": 2,
+            "wrong": [
+              "time"
+            ],
+            "valueErrPct": 5,
+            "timeErrMin": 80,
+            "said": {
+              "peak": {
+                "value": 18,
+                "unit": "K req/s"
+              },
+              "peakTime": "20:30",
+              "thresholdCrossed": "yes",
+              "topSeries": "GET /api/orders",
+              "summary": "API throughput spiked to 18K req/s at 20:30, mainly due to GET /api/orders."
+            },
+            "truth": {
+              "peak": "17.15K req/s",
+              "time": "21:50",
+              "threshold": "yes",
+              "top": "GET /api/orders"
+            }
+          }
+        ]
+      },
+      "0.1": {
+        "reads": 300,
+        "wrong": 236,
+        "caught": 143,
+        "missed": 93,
+        "rightFlagged": 0,
+        "confirmed": 157,
+        "confirmedWrong": 93,
+        "missedBy": {
+          "value": 61,
+          "time": 9,
+          "series": 4,
+          "threshold": 6,
+          "time+threshold": 3,
+          "value+time": 7,
+          "value+series": 3
+        },
+        "missedExamples": [
+          {
+            "panel": "p002",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -7.2,
+            "timeErrMin": 65,
+            "said": {
+              "peak": {
+                "value": 3,
+                "unit": "s"
+              },
+              "peakTime": "18:30",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "orders",
+              "summary": "Upstream response time peaks around 18:30, primarily due to 'orders' service."
+            },
+            "truth": {
+              "peak": "3.23 s",
+              "time": "17:25",
+              "threshold": "no threshold",
+              "top": "orders"
+            }
+          },
+          {
+            "panel": "p004",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -8.2,
+            "timeErrMin": 25,
+            "said": {
+              "peak": {
+                "value": 1.7,
+                "unit": "s"
+              },
+              "peakTime": "13:30",
+              "thresholdCrossed": "no",
+              "topSeries": "search",
+              "summary": "Upstream response times are stable, with a spike in search response time around 13:30."
+            },
+            "truth": {
+              "peak": "1.85 s",
+              "time": "13:55",
+              "threshold": "no",
+              "top": "search"
+            }
+          },
+          {
+            "panel": "p005",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 9,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 200,
+                "unit": "req/s"
+              },
+              "peakTime": "20:15",
+              "thresholdCrossed": "no",
+              "topSeries": "POST /api/cart",
+              "summary": "gRPC calls rate over time, with a spike in POST /api/cart requests around 20:15"
+            },
+            "truth": {
+              "peak": "183.46 req/s",
+              "time": "20:12",
+              "threshold": "no",
+              "top": "POST /api/cart"
+            }
+          },
+          {
+            "panel": "p006",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 7.1,
+            "timeErrMin": 5,
+            "said": {
+              "peak": {
+                "value": 2.9,
+                "unit": "K req/s"
+              },
+              "peakTime": "10:15",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "POST /api/cart",
+              "summary": "Ingress request rate peaks at 10:15 with POST /api/cart reaching nearly 3K req/s."
+            },
+            "truth": {
+              "peak": "2.71K req/s",
+              "time": "10:10",
+              "threshold": "no threshold",
+              "top": "POST /api/cart"
+            }
+          },
+          {
+            "panel": "p013",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 5.7,
+            "timeErrMin": 15,
+            "said": {
+              "peak": {
+                "value": 3.2,
+                "unit": "s"
+              },
+              "peakTime": "03:30",
+              "thresholdCrossed": "yes",
+              "topSeries": "gateway",
+              "summary": "Request duration p99 peaks at 3.2s around 03:30 UTC, exceeding the 2s threshold."
+            },
+            "truth": {
+              "peak": "3.03 s",
+              "time": "03:15",
+              "threshold": "yes",
+              "top": "gateway"
+            }
+          },
+          {
+            "panel": "p017",
+            "run": 1,
+            "wrong": [
+              "time"
+            ],
+            "valueErrPct": -3.4,
+            "timeErrMin": 90,
+            "said": {
+              "peak": {
+                "value": 170,
+                "unit": "MiB"
+              },
+              "peakTime": "11:45",
+              "thresholdCrossed": "yes",
+              "topSeries": "api-66f4-w5d0",
+              "summary": "Page cache usage spiked to 170 MiB around 11:45 UTC, exceeding the 100 MiB threshold."
+            },
+            "truth": {
+              "peak": "176.04 MiB",
+              "time": "13:15",
+              "threshold": "yes",
+              "top": "api-66f4-w5d0"
+            }
+          },
+          {
+            "panel": "p020",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 2.5,
+            "timeErrMin": 50,
+            "said": {
+              "peak": {
+                "value": 40,
+                "unit": "%"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no",
+              "topSeries": "node-c3",
+              "summary": "Error ratio peaks at 40% around 12:00, mostly from node-c3."
+            },
+            "truth": {
+              "peak": "39.01%",
+              "time": "12:50",
+              "threshold": "no",
+              "top": "node-a1"
+            }
+          },
+          {
+            "panel": "p021",
+            "run": 1,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": 3.7,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 6,
+                "unit": "GiB"
+              },
+              "peakTime": "20:15",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "web-7d9f-x2k4",
+              "summary": "Redis used memory is spiking on one instance, web-7d9f-x2k4, around 20:15 UTC."
+            },
+            "truth": {
+              "peak": "5.78 GiB",
+              "time": "20:17",
+              "threshold": "yes",
+              "top": "web-7d9f-x2k4"
+            }
+          },
+          {
+            "panel": "p023",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 7.9,
+            "timeErrMin": 5,
+            "said": {
+              "peak": {
+                "value": 4,
+                "unit": "K req/s"
+              },
+              "peakTime": "21:15",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /static",
+              "summary": "Ingress request rate peaked at 4K req/s around 21:15, driven by GET /static requests."
+            },
+            "truth": {
+              "peak": "3.71K req/s",
+              "time": "21:10",
+              "threshold": "no threshold",
+              "top": "GET /static"
+            }
+          },
+          {
+            "panel": "p025",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 8,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 1.5,
+                "unit": "GiB"
+              },
+              "peakTime": "04:46",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "Container RSS memory usage over time, with worker-5c6b-z9p2 peaking at 1.5GiB around 04:46."
+            },
+            "truth": {
+              "peak": "1.39 GiB",
+              "time": "04:43",
+              "threshold": "no threshold",
+              "top": "worker-5c6b-z9p2"
+            }
+          },
+          {
+            "panel": "p031",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 6.3,
+            "timeErrMin": 35,
+            "said": {
+              "peak": {
+                "value": 160,
+                "unit": "MiB"
+              },
+              "peakTime": "09:30",
+              "thresholdCrossed": "yes",
+              "topSeries": "web-7d9f-x2k4",
+              "summary": "Redis used memory is spiking on web-7d9f-x2k4 around 09:30"
+            },
+            "truth": {
+              "peak": "150.49 MiB",
+              "time": "10:05",
+              "threshold": "yes",
+              "top": "web-7d9f-x2k4"
+            }
+          },
+          {
+            "panel": "p034",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -6.1,
+            "timeErrMin": 8,
+            "said": {
+              "peak": {
+                "value": 3,
+                "unit": "GiB"
+              },
+              "peakTime": "08:30",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-h3t7",
+              "summary": "Container RSS memory usage peaks at 08:30, with worker-5c6b-h3t7 being the largest consumer."
+            },
+            "truth": {
+              "peak": "3.19 GiB",
+              "time": "08:22",
+              "threshold": "no threshold",
+              "top": "worker-5c6b-h3t7"
+            }
+          }
+        ]
+      },
+      "0.2": {
+        "reads": 300,
+        "wrong": 236,
+        "caught": 102,
+        "missed": 134,
+        "rightFlagged": 0,
+        "confirmed": 198,
+        "confirmedWrong": 134,
+        "missedBy": {
+          "value": 95,
+          "time": 9,
+          "series": 4,
+          "threshold": 6,
+          "time+threshold": 3,
+          "value+time": 11,
+          "value+time+threshold": 3,
+          "value+series": 3
+        },
+        "missedExamples": [
+          {
+            "panel": "p002",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -7.2,
+            "timeErrMin": 65,
+            "said": {
+              "peak": {
+                "value": 3,
+                "unit": "s"
+              },
+              "peakTime": "18:30",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "orders",
+              "summary": "Upstream response time peaks around 18:30, primarily due to 'orders' service."
+            },
+            "truth": {
+              "peak": "3.23 s",
+              "time": "17:25",
+              "threshold": "no threshold",
+              "top": "orders"
+            }
+          },
+          {
+            "panel": "p004",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -8.2,
+            "timeErrMin": 25,
+            "said": {
+              "peak": {
+                "value": 1.7,
+                "unit": "s"
+              },
+              "peakTime": "13:30",
+              "thresholdCrossed": "no",
+              "topSeries": "search",
+              "summary": "Upstream response times are stable, with a spike in search response time around 13:30."
+            },
+            "truth": {
+              "peak": "1.85 s",
+              "time": "13:55",
+              "threshold": "no",
+              "top": "search"
+            }
+          },
+          {
+            "panel": "p005",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 9,
+            "timeErrMin": 3,
+            "said": {
+              "peak": {
+                "value": 200,
+                "unit": "req/s"
+              },
+              "peakTime": "20:15",
+              "thresholdCrossed": "no",
+              "topSeries": "POST /api/cart",
+              "summary": "gRPC calls rate over time, with a spike in POST /api/cart requests around 20:15"
+            },
+            "truth": {
+              "peak": "183.46 req/s",
+              "time": "20:12",
+              "threshold": "no",
+              "top": "POST /api/cart"
+            }
+          },
+          {
+            "panel": "p006",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 7.1,
+            "timeErrMin": 5,
+            "said": {
+              "peak": {
+                "value": 2.9,
+                "unit": "K req/s"
+              },
+              "peakTime": "10:15",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "POST /api/cart",
+              "summary": "Ingress request rate peaks at 10:15 with POST /api/cart reaching nearly 3K req/s."
+            },
+            "truth": {
+              "peak": "2.71K req/s",
+              "time": "10:10",
+              "threshold": "no threshold",
+              "top": "POST /api/cart"
+            }
+          },
+          {
+            "panel": "p009",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 16.4,
+            "timeErrMin": 4,
+            "said": {
+              "peak": {
+                "value": 700,
+                "unit": "req/s"
+              },
+              "peakTime": "10:00",
+              "thresholdCrossed": "yes",
+              "topSeries": "POST /api/cart",
+              "summary": "Queue consumer rate for POST /api/cart is spiking at 10:00, exceeding the threshold."
+            },
+            "truth": {
+              "peak": "601.15 req/s",
+              "time": "09:56",
+              "threshold": "yes",
+              "top": "POST /api/cart"
+            }
+          },
+          {
+            "panel": "p007",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -15.6,
+            "timeErrMin": 11,
+            "said": {
+              "peak": {
+                "value": 2.8,
+                "unit": "GiB"
+              },
+              "peakTime": "11:55",
+              "thresholdCrossed": "no",
+              "topSeries": "web-7d9f-x2k4",
+              "summary": "JVM heap usage for web-7d9f-x2k4 is increasing sharply towards the end of the period, reaching nearly 3 GiB."
+            },
+            "truth": {
+              "peak": "3.32 GiB",
+              "time": "12:06",
+              "threshold": "no",
+              "top": "web-7d9f-x2k4"
+            }
+          },
+          {
+            "panel": "p014",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -11.1,
+            "timeErrMin": 13,
+            "said": {
+              "peak": {
+                "value": 1,
+                "unit": "GiB"
+              },
+              "peakTime": "15:45",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "web-7d9f-q8m1",
+              "summary": "Redis used memory is stable with a spike on one instance around 15:45"
+            },
+            "truth": {
+              "peak": "1.13 GiB",
+              "time": "15:58",
+              "threshold": "no threshold",
+              "top": "web-7d9f-q8m1"
+            }
+          },
+          {
+            "panel": "p013",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 5.7,
+            "timeErrMin": 15,
+            "said": {
+              "peak": {
+                "value": 3.2,
+                "unit": "s"
+              },
+              "peakTime": "03:30",
+              "thresholdCrossed": "yes",
+              "topSeries": "gateway",
+              "summary": "Request duration p99 peaks at 3.2s around 03:30 UTC, exceeding the 2s threshold."
+            },
+            "truth": {
+              "peak": "3.03 s",
+              "time": "03:15",
+              "threshold": "yes",
+              "top": "gateway"
+            }
+          },
+          {
+            "panel": "p015",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -11.2,
+            "timeErrMin": 1,
+            "said": {
+              "peak": {
+                "value": 3,
+                "unit": "K req/s"
+              },
+              "peakTime": "04:20",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /static",
+              "summary": "HTTP requests for GET /static spiked to 3K req/s around 04:20 UTC."
+            },
+            "truth": {
+              "peak": "3.38K req/s",
+              "time": "04:19",
+              "threshold": "no threshold",
+              "top": "GET /static"
+            }
+          },
+          {
+            "panel": "p017",
+            "run": 1,
+            "wrong": [
+              "time"
+            ],
+            "valueErrPct": -3.4,
+            "timeErrMin": 90,
+            "said": {
+              "peak": {
+                "value": 170,
+                "unit": "MiB"
+              },
+              "peakTime": "11:45",
+              "thresholdCrossed": "yes",
+              "topSeries": "api-66f4-w5d0",
+              "summary": "Page cache usage spiked to 170 MiB around 11:45 UTC, exceeding the 100 MiB threshold."
+            },
+            "truth": {
+              "peak": "176.04 MiB",
+              "time": "13:15",
+              "threshold": "yes",
+              "top": "api-66f4-w5d0"
+            }
+          },
+          {
+            "panel": "p019",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -12.1,
+            "timeErrMin": 6,
+            "said": {
+              "peak": {
+                "value": 30,
+                "unit": "%"
+              },
+              "peakTime": "00:00",
+              "thresholdCrossed": "yes",
+              "topSeries": "node-d4",
+              "summary": "Memory utilisation peaked at 30% on node-d4 around 00:00 UTC."
+            },
+            "truth": {
+              "peak": "34.13%",
+              "time": "00:06",
+              "threshold": "yes",
+              "top": "node-d4"
+            }
+          },
+          {
+            "panel": "p020",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 2.5,
+            "timeErrMin": 50,
+            "said": {
+              "peak": {
+                "value": 40,
+                "unit": "%"
+              },
+              "peakTime": "12:00",
+              "thresholdCrossed": "no",
+              "topSeries": "node-c3",
+              "summary": "Error ratio peaks at 40% around 12:00, mostly from node-c3."
+            },
+            "truth": {
+              "peak": "39.01%",
+              "time": "12:50",
+              "threshold": "no",
+              "top": "node-a1"
+            }
+          }
+        ]
+      }
+    },
+    "nemotron-3.5-super-vl+reasoning-t0.6": {
+      "0.05": {
+        "reads": 34,
+        "wrong": 15,
+        "caught": 12,
+        "missed": 3,
+        "rightFlagged": 0,
+        "confirmed": 22,
+        "confirmedWrong": 3,
+        "missedBy": {
+          "series": 2,
+          "threshold": 1
+        },
+        "missedExamples": [
+          {
+            "panel": "p016",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 4.5,
+            "timeErrMin": 65,
+            "said": {
+              "peak": {
+                "value": 4000,
+                "unit": "req/s"
+              },
+              "peakTime": "16:00",
+              "thresholdCrossed": "yes",
+              "topSeries": "GET /health",
+              "summary": "gRPC calls spike to ~4K req/s around 16:00 UTC, crossing the 3K req/s threshold, driven by GET /health."
+            },
+            "truth": {
+              "peak": "3.83K req/s",
+              "time": "17:05",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          },
+          {
+            "panel": "p022",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -1.2,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 75,
+                "unit": "req/s"
+              },
+              "peakTime": "02:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "Queue consumer rate spikes to ~75 req/s at 02:00 UTC then stabilizes around 45 req/s."
+            },
+            "truth": {
+              "peak": "75.92 req/s",
+              "time": "01:58",
+              "threshold": "no threshold",
+              "top": "GET /static"
+            }
+          },
+          {
+            "panel": "p043",
+            "run": 1,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": -0.9,
+            "timeErrMin": 50,
+            "said": {
+              "peak": {
+                "value": 17000,
+                "unit": "req/s"
+              },
+              "peakTime": "21:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/orders",
+              "summary": "API throughput shows mostly GET /api/orders traffic with a sharp spike to ~17K req/s around 21:00 UTC."
+            },
+            "truth": {
+              "peak": "17.15K req/s",
+              "time": "21:50",
+              "threshold": "yes",
+              "top": "GET /api/orders"
+            }
+          }
+        ]
+      },
+      "0.1": {
+        "reads": 34,
+        "wrong": 15,
+        "caught": 8,
+        "missed": 7,
+        "rightFlagged": 0,
+        "confirmed": 26,
+        "confirmedWrong": 7,
+        "missedBy": {
+          "series": 2,
+          "value": 4,
+          "threshold": 1
+        },
+        "missedExamples": [
+          {
+            "panel": "p016",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 4.5,
+            "timeErrMin": 65,
+            "said": {
+              "peak": {
+                "value": 4000,
+                "unit": "req/s"
+              },
+              "peakTime": "16:00",
+              "thresholdCrossed": "yes",
+              "topSeries": "GET /health",
+              "summary": "gRPC calls spike to ~4K req/s around 16:00 UTC, crossing the 3K req/s threshold, driven by GET /health."
+            },
+            "truth": {
+              "peak": "3.83K req/s",
+              "time": "17:05",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          },
+          {
+            "panel": "p025",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 8,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 1.5,
+                "unit": "GiB"
+              },
+              "peakTime": "04:45",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "Container RSS spikes to about 1.5 GiB for worker-5c6b-z9p2 around 04:45 UTC before settling near 512 MiB."
+            },
+            "truth": {
+              "peak": "1.39 GiB",
+              "time": "04:43",
+              "threshold": "no threshold",
+              "top": "worker-5c6b-z9p2"
+            }
+          },
+          {
+            "panel": "p022",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -1.2,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 75,
+                "unit": "req/s"
+              },
+              "peakTime": "02:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "Queue consumer rate spikes to ~75 req/s at 02:00 UTC then stabilizes around 45 req/s."
+            },
+            "truth": {
+              "peak": "75.92 req/s",
+              "time": "01:58",
+              "threshold": "no threshold",
+              "top": "GET /static"
+            }
+          },
+          {
+            "panel": "p043",
+            "run": 1,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": -0.9,
+            "timeErrMin": 50,
+            "said": {
+              "peak": {
+                "value": 17000,
+                "unit": "req/s"
+              },
+              "peakTime": "21:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/orders",
+              "summary": "API throughput shows mostly GET /api/orders traffic with a sharp spike to ~17K req/s around 21:00 UTC."
+            },
+            "truth": {
+              "peak": "17.15K req/s",
+              "time": "21:50",
+              "threshold": "yes",
+              "top": "GET /api/orders"
+            }
+          },
+          {
+            "panel": "p064",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 8.9,
+            "timeErrMin": 4,
+            "said": {
+              "peak": {
+                "value": 200,
+                "unit": "req/s"
+              },
+              "peakTime": "06:30",
+              "thresholdCrossed": "yes",
+              "topSeries": "GET /api/orders",
+              "summary": "API throughput shows GET /api/orders spiking above the threshold around 06:30 UTC."
+            },
+            "truth": {
+              "peak": "183.73 req/s",
+              "time": "06:26",
+              "threshold": "yes",
+              "top": "GET /api/orders"
+            }
+          },
+          {
+            "panel": "p085",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -6.6,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 128,
+                "unit": "MiB"
+              },
+              "peakTime": "15:25",
+              "thresholdCrossed": "yes",
+              "topSeries": "api-66f4-n1r8",
+              "summary": "Memory usage for api-66f4-n1r8 spiked to 128 MiB, crossing the threshold, before stabilizing."
+            },
+            "truth": {
+              "peak": "137.1 MiB",
+              "time": "15:25",
+              "threshold": "yes",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p100",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 9.2,
+            "timeErrMin": 17,
+            "said": {
+              "peak": {
+                "value": 1.5,
+                "unit": "s"
+              },
+              "peakTime": "15:05",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "orders",
+              "summary": "orders p95 checkout latency spikes to ~1.5s after 15:00 UTC while cart remains low."
+            },
+            "truth": {
+              "peak": "1.37 s",
+              "time": "15:22",
+              "threshold": "no threshold",
+              "top": "orders"
+            }
+          }
+        ]
+      },
+      "0.2": {
+        "reads": 34,
+        "wrong": 15,
+        "caught": 7,
+        "missed": 8,
+        "rightFlagged": 0,
+        "confirmed": 27,
+        "confirmedWrong": 8,
+        "missedBy": {
+          "value": 5,
+          "series": 2,
+          "threshold": 1
+        },
+        "missedExamples": [
+          {
+            "panel": "p001",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -11.9,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 20000,
+                "unit": "req/s"
+              },
+              "peakTime": "23:30",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "POST /api/cart",
+              "summary": "HTTP requests spike to about 20K req/s at 23:30 UTC, driven mainly by POST /api/cart traffic."
+            },
+            "truth": {
+              "peak": "22.71K req/s",
+              "time": "23:30",
+              "threshold": "no threshold",
+              "top": "POST /api/cart"
+            }
+          },
+          {
+            "panel": "p016",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": 4.5,
+            "timeErrMin": 65,
+            "said": {
+              "peak": {
+                "value": 4000,
+                "unit": "req/s"
+              },
+              "peakTime": "16:00",
+              "thresholdCrossed": "yes",
+              "topSeries": "GET /health",
+              "summary": "gRPC calls spike to ~4K req/s around 16:00 UTC, crossing the 3K req/s threshold, driven by GET /health."
+            },
+            "truth": {
+              "peak": "3.83K req/s",
+              "time": "17:05",
+              "threshold": "yes",
+              "top": "GET /api/search"
+            }
+          },
+          {
+            "panel": "p025",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 8,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 1.5,
+                "unit": "GiB"
+              },
+              "peakTime": "04:45",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "worker-5c6b-z9p2",
+              "summary": "Container RSS spikes to about 1.5 GiB for worker-5c6b-z9p2 around 04:45 UTC before settling near 512 MiB."
+            },
+            "truth": {
+              "peak": "1.39 GiB",
+              "time": "04:43",
+              "threshold": "no threshold",
+              "top": "worker-5c6b-z9p2"
+            }
+          },
+          {
+            "panel": "p022",
+            "run": 1,
+            "wrong": [
+              "series"
+            ],
+            "valueErrPct": -1.2,
+            "timeErrMin": 2,
+            "said": {
+              "peak": {
+                "value": 75,
+                "unit": "req/s"
+              },
+              "peakTime": "02:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/search",
+              "summary": "Queue consumer rate spikes to ~75 req/s at 02:00 UTC then stabilizes around 45 req/s."
+            },
+            "truth": {
+              "peak": "75.92 req/s",
+              "time": "01:58",
+              "threshold": "no threshold",
+              "top": "GET /static"
+            }
+          },
+          {
+            "panel": "p043",
+            "run": 1,
+            "wrong": [
+              "threshold"
+            ],
+            "valueErrPct": -0.9,
+            "timeErrMin": 50,
+            "said": {
+              "peak": {
+                "value": 17000,
+                "unit": "req/s"
+              },
+              "peakTime": "21:00",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "GET /api/orders",
+              "summary": "API throughput shows mostly GET /api/orders traffic with a sharp spike to ~17K req/s around 21:00 UTC."
+            },
+            "truth": {
+              "peak": "17.15K req/s",
+              "time": "21:50",
+              "threshold": "yes",
+              "top": "GET /api/orders"
+            }
+          },
+          {
+            "panel": "p064",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 8.9,
+            "timeErrMin": 4,
+            "said": {
+              "peak": {
+                "value": 200,
+                "unit": "req/s"
+              },
+              "peakTime": "06:30",
+              "thresholdCrossed": "yes",
+              "topSeries": "GET /api/orders",
+              "summary": "API throughput shows GET /api/orders spiking above the threshold around 06:30 UTC."
+            },
+            "truth": {
+              "peak": "183.73 req/s",
+              "time": "06:26",
+              "threshold": "yes",
+              "top": "GET /api/orders"
+            }
+          },
+          {
+            "panel": "p085",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": -6.6,
+            "timeErrMin": 0,
+            "said": {
+              "peak": {
+                "value": 128,
+                "unit": "MiB"
+              },
+              "peakTime": "15:25",
+              "thresholdCrossed": "yes",
+              "topSeries": "api-66f4-n1r8",
+              "summary": "Memory usage for api-66f4-n1r8 spiked to 128 MiB, crossing the threshold, before stabilizing."
+            },
+            "truth": {
+              "peak": "137.1 MiB",
+              "time": "15:25",
+              "threshold": "yes",
+              "top": "api-66f4-n1r8"
+            }
+          },
+          {
+            "panel": "p100",
+            "run": 1,
+            "wrong": [
+              "value"
+            ],
+            "valueErrPct": 9.2,
+            "timeErrMin": 17,
+            "said": {
+              "peak": {
+                "value": 1.5,
+                "unit": "s"
+              },
+              "peakTime": "15:05",
+              "thresholdCrossed": "no threshold",
+              "topSeries": "orders",
+              "summary": "orders p95 checkout latency spikes to ~1.5s after 15:00 UTC while cart remains low."
+            },
+            "truth": {
+              "peak": "1.37 s",
+              "time": "15:22",
+              "threshold": "no threshold",
+              "top": "orders"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

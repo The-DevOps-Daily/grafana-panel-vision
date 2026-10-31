@@ -1,7 +1,10 @@
 // Stage 4: what one screenshot costs, from the usage each call reported and the
-// list prices in prices.json. Image tokens are estimated per model as the prompt
-// tokens with the panel minus the prompt tokens of the same question with no
-// image (the stage 0 text-only call). Writes results/cost.md and results/cost.json.
+// list prices in prices.json. Only run 1 is priced: in runs 2 and 3 the same
+// image is sent again and some models serve it from the prompt cache, which a
+// bot that sees each screenshot once would not get. Image tokens are estimated
+// per model as the prompt tokens with the panel minus the prompt tokens of the
+// same question with no image (the stage 0 text-only call).
+// Writes results/cost.md and results/cost.json.
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { runStamp, readStamped } from '../lib/stamp.mjs';
 import { PRICES } from '../lib/cost.mjs';
@@ -19,11 +22,14 @@ const order = Object.keys(CONFIGS);
 const files = readdirSync(`${ROOT}results/raw`).filter((f) => f.endsWith('.jsonl')).sort((a, b) => order.indexOf(a.replace('.jsonl', '')) - order.indexOf(b.replace('.jsonl', '')));
 const out = { stamp: STAMP, prices: PRICES._source, configs: {} };
 const md = ['# Cost per screenshot', '', `Stamp ${STAMP}. From the usage block of every successful call and the list prices in prices.json (${PRICES._source}). ${PRICES._note}`, ''];
-md.push('| configuration | calls | input $/1M | output $/1M | mean prompt tokens | of which image (est.) | cached prompt tokens | mean completion tokens | input share of cost | $ per screenshot | $ per 1,000 |', '|---|---|---|---|---|---|---|---|---|---|---|');
+md.push('Run 1 only (each image sent once).', '');
+md.push('| configuration | calls | input $/1M | output $/1M | mean prompt tokens | of which image (est.) | cached prompt tokens, run 1 | cached, runs 2-3 | mean completion tokens | input share of cost | $ per screenshot | $ per 1,000 |', '|---|---|---|---|---|---|---|---|---|---|---|---|');
 const bySize = {};
 for (const f of files) {
   const id = f.replace('.jsonl', '');
-  const recs = readStamped(`${ROOT}results/raw/${f}`, STAMP).filter((r) => r.ok && r.usage);
+  const all = readStamped(`${ROOT}results/raw/${f}`, STAMP).filter((r) => r.ok && r.usage);
+  const recs = all.filter((r) => r.run === 1);
+  const cachedLater = all.filter((r) => r.run > 1).map((r) => r.usage.prompt_tokens_details?.cached_tokens ?? 0);
   const model = recs[0].model;
   const p = PRICES[model];
   const prompt = recs.map((r) => r.usage.prompt_tokens);
@@ -37,9 +43,10 @@ for (const f of files) {
     model, calls: recs.length, promptMean: mean(prompt), cachedMean: mean(cached), completionMean: mean(completion),
     imageTokensEst: base != null ? mean(prompt) - base : null, textOnlyPrompt: base,
     inputShare: mean(inCost) / per, perScreenshot: per, per1000: per * 1000,
+    cachedMeanRunsAfter1: cachedLater.length ? mean(cachedLater) : null,
   };
   out.configs[id] = row;
-  md.push(`| ${id} | ${row.calls} | ${p.input} | ${p.output} | ${row.promptMean.toFixed(0)} | ${row.imageTokensEst?.toFixed(0) ?? '-'} | ${row.cachedMean.toFixed(0)} | ${row.completionMean.toFixed(0)} | ${(100 * row.inputShare).toFixed(0)}% | ${row.perScreenshot.toFixed(5)} | ${row.per1000.toFixed(3)} |`);
+  md.push(`| ${id} | ${row.calls} | ${p.input} | ${p.output} | ${row.promptMean.toFixed(0)} | ${row.imageTokensEst?.toFixed(0) ?? '-'} | ${row.cachedMean.toFixed(0)} | ${row.cachedMeanRunsAfter1?.toFixed(0) ?? '-'} | ${row.completionMean.toFixed(0)} | ${(100 * row.inputShare).toFixed(0)}% | ${row.perScreenshot.toFixed(5)} | ${row.per1000.toFixed(3)} |`);
   bySize[id] = {};
   for (const r of recs) {
     const t = truth[r.panel];

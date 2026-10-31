@@ -1,0 +1,1835 @@
+{
+  "stamp": "47afe9459fbc1089",
+  "tolerances": "value 5% relative; time 5% of range; threshold exact; series nearest legend name",
+  "configs": {
+    "nemotron-3.5-super-vl": {
+      "model": "nemotron-3.5-super-vl",
+      "reasoning": "off",
+      "temperature": 0,
+      "maxTokens": 1024,
+      "calls": 301,
+      "runs": [
+        1,
+        2,
+        3
+      ],
+      "run1": {
+        "panels": 100,
+        "value": {
+          "correct": 69,
+          "of": 100,
+          "ci95": [
+            59.4,
+            77.2
+          ]
+        },
+        "time": {
+          "correct": 96,
+          "of": 100,
+          "ci95": [
+            90.2,
+            98.4
+          ]
+        },
+        "threshold": {
+          "correct": 91,
+          "of": 100,
+          "ci95": [
+            83.8,
+            95.2
+          ]
+        },
+        "series": {
+          "correct": 75,
+          "of": 100,
+          "ci95": [
+            65.7,
+            82.5
+          ]
+        },
+        "all": {
+          "correct": 48,
+          "of": 100,
+          "ci95": [
+            38.5,
+            57.7
+          ]
+        },
+        "valueWithin10": 82,
+        "valueWithin20": 86
+      },
+      "perRun": {
+        "1": {
+          "panels": 100,
+          "all": 48,
+          "subsetAll": 20,
+          "subsetPanels": 34
+        },
+        "2": {
+          "panels": 100,
+          "all": 49,
+          "subsetAll": 22,
+          "subsetPanels": 34
+        },
+        "3": {
+          "panels": 100,
+          "all": 48,
+          "subsetAll": 21,
+          "subsetPanels": 34
+        }
+      },
+      "nonAnswers": {},
+      "features": {
+        "all panels": {
+          "n": 100,
+          "value": 69,
+          "time": 96,
+          "threshold": 91,
+          "series": 75,
+          "all": 48,
+          "ci95": [
+            38.5,
+            57.7
+          ]
+        },
+        "log y-axis": {
+          "n": 25,
+          "value": 1,
+          "time": 23,
+          "threshold": 20,
+          "series": 18,
+          "all": 1,
+          "ci95": [
+            0.7,
+            19.5
+          ]
+        },
+        "stacked": {
+          "n": 19,
+          "value": 15,
+          "time": 18,
+          "threshold": 17,
+          "series": 12,
+          "all": 6,
+          "ci95": [
+            15.4,
+            54
+          ]
+        },
+        "4-5 series": {
+          "n": 36,
+          "value": 19,
+          "time": 35,
+          "threshold": 33,
+          "series": 24,
+          "all": 11,
+          "ci95": [
+            18,
+            46.9
+          ]
+        },
+        "1 series": {
+          "n": 17,
+          "value": 15,
+          "time": 17,
+          "threshold": 17,
+          "series": 17,
+          "all": 15,
+          "ci95": [
+            65.7,
+            96.7
+          ]
+        },
+        "small panel": {
+          "n": 19,
+          "value": 11,
+          "time": 18,
+          "threshold": 18,
+          "series": 14,
+          "all": 8,
+          "ci95": [
+            23.1,
+            63.7
+          ]
+        },
+        "similar colours": {
+          "n": 27,
+          "value": 18,
+          "time": 27,
+          "threshold": 26,
+          "series": 11,
+          "all": 7,
+          "ci95": [
+            13.2,
+            44.7
+          ]
+        },
+        "threshold shown": {
+          "n": 65,
+          "value": 44,
+          "time": 62,
+          "threshold": 58,
+          "series": 51,
+          "all": 31,
+          "ci95": [
+            36,
+            59.6
+          ]
+        },
+        "no threshold": {
+          "n": 35,
+          "value": 25,
+          "time": 34,
+          "threshold": 33,
+          "series": 24,
+          "all": 17,
+          "ci95": [
+            33,
+            64.4
+          ]
+        },
+        "peak at right edge": {
+          "n": 28,
+          "value": 18,
+          "time": 26,
+          "threshold": 23,
+          "series": 23,
+          "all": 13,
+          "ci95": [
+            29.5,
+            64.2
+          ]
+        },
+        "high noise": {
+          "n": 26,
+          "value": 23,
+          "time": 25,
+          "threshold": 23,
+          "series": 22,
+          "all": 15,
+          "ci95": [
+            38.9,
+            74.5
+          ]
+        },
+        "range 1h": {
+          "n": 33,
+          "value": 21,
+          "time": 31,
+          "threshold": 31,
+          "series": 26,
+          "all": 16,
+          "ci95": [
+            32.5,
+            64.8
+          ]
+        },
+        "range 6h": {
+          "n": 36,
+          "value": 25,
+          "time": 35,
+          "threshold": 33,
+          "series": 27,
+          "all": 17,
+          "ci95": [
+            32,
+            63
+          ]
+        },
+        "range 24h": {
+          "n": 31,
+          "value": 23,
+          "time": 30,
+          "threshold": 27,
+          "series": 22,
+          "all": 15,
+          "ci95": [
+            32,
+            65.2
+          ]
+        }
+      },
+      "latencyMs": {
+        "p50": 1448,
+        "p95": 1764.2500000000005,
+        "max": 2586
+      },
+      "attempts": {
+        "total": 388,
+        "ok": 300,
+        "rateLimited": 88,
+        "serverError": 0,
+        "networkOrTimeout": 0,
+        "other4xx": 0
+      },
+      "truncatedCalls": 0,
+      "cost": {
+        "meanPerCall": 0.00025846149999999993,
+        "p95PerCall": 0.0003195475,
+        "maxPerCall": 0.0003279,
+        "per1000": 0.2584614999999999,
+        "total": 0.02584614999999999
+      },
+      "tokens": {
+        "promptMean": 651.87,
+        "completionMean": 97.07666666666667,
+        "completionP95": 114,
+        "reasoningTokensReported": 0,
+        "callsWithReasoningText": 0
+      },
+      "nonAnswersRun1": {},
+      "repeat": {
+        "panels": 100,
+        "sameVerdict": 71,
+        "sameFacts": 13,
+        "rightEveryRun": 33
+      },
+      "unitSlips": {
+        "run1": [],
+        "allRuns": 2
+      },
+      "claim": {
+        "run1Correct": 48,
+        "minCorrect": 90,
+        "meanCost": 0.00025846149999999993,
+        "maxCost": 0.001,
+        "accuracyHolds": false,
+        "costHolds": true
+      }
+    },
+    "nemotron-3.5-super-vl+reasoning": {
+      "model": "nemotron-3.5-super-vl",
+      "reasoning": "on (default)",
+      "temperature": 0,
+      "maxTokens": 16384,
+      "calls": 168,
+      "runs": [
+        1,
+        2,
+        3
+      ],
+      "run1": {
+        "panels": 100,
+        "value": {
+          "correct": 71,
+          "of": 100,
+          "ci95": [
+            61.5,
+            79
+          ]
+        },
+        "time": {
+          "correct": 94,
+          "of": 100,
+          "ci95": [
+            87.5,
+            97.2
+          ]
+        },
+        "threshold": {
+          "correct": 96,
+          "of": 100,
+          "ci95": [
+            90.2,
+            98.4
+          ]
+        },
+        "series": {
+          "correct": 80,
+          "of": 100,
+          "ci95": [
+            71.1,
+            86.7
+          ]
+        },
+        "all": {
+          "correct": 54,
+          "of": 100,
+          "ci95": [
+            44.3,
+            63.4
+          ]
+        },
+        "valueWithin10": 82,
+        "valueWithin20": 88
+      },
+      "perRun": {
+        "1": {
+          "panels": 100,
+          "all": 54,
+          "subsetAll": 20,
+          "subsetPanels": 34
+        },
+        "2": {
+          "panels": 34,
+          "all": 16,
+          "subsetAll": 16,
+          "subsetPanels": 34
+        },
+        "3": {
+          "panels": 34,
+          "all": 19,
+          "subsetAll": 19,
+          "subsetPanels": 34
+        }
+      },
+      "nonAnswers": {},
+      "features": {
+        "all panels": {
+          "n": 100,
+          "value": 71,
+          "time": 94,
+          "threshold": 96,
+          "series": 80,
+          "all": 54,
+          "ci95": [
+            44.3,
+            63.4
+          ]
+        },
+        "log y-axis": {
+          "n": 25,
+          "value": 2,
+          "time": 21,
+          "threshold": 23,
+          "series": 21,
+          "all": 2,
+          "ci95": [
+            2.2,
+            25
+          ]
+        },
+        "stacked": {
+          "n": 19,
+          "value": 18,
+          "time": 18,
+          "threshold": 17,
+          "series": 11,
+          "all": 8,
+          "ci95": [
+            23.1,
+            63.7
+          ]
+        },
+        "4-5 series": {
+          "n": 36,
+          "value": 21,
+          "time": 33,
+          "threshold": 34,
+          "series": 27,
+          "all": 16,
+          "ci95": [
+            29.5,
+            60.4
+          ]
+        },
+        "1 series": {
+          "n": 17,
+          "value": 13,
+          "time": 17,
+          "threshold": 17,
+          "series": 17,
+          "all": 13,
+          "ci95": [
+            52.7,
+            90.4
+          ]
+        },
+        "small panel": {
+          "n": 19,
+          "value": 12,
+          "time": 17,
+          "threshold": 18,
+          "series": 15,
+          "all": 9,
+          "ci95": [
+            27.3,
+            68.3
+          ]
+        },
+        "similar colours": {
+          "n": 27,
+          "value": 19,
+          "time": 23,
+          "threshold": 25,
+          "series": 14,
+          "all": 10,
+          "ci95": [
+            21.5,
+            55.8
+          ]
+        },
+        "threshold shown": {
+          "n": 65,
+          "value": 47,
+          "time": 62,
+          "threshold": 61,
+          "series": 56,
+          "all": 38,
+          "ci95": [
+            46.3,
+            69.6
+          ]
+        },
+        "no threshold": {
+          "n": 35,
+          "value": 24,
+          "time": 32,
+          "threshold": 35,
+          "series": 24,
+          "all": 16,
+          "ci95": [
+            30.5,
+            61.8
+          ]
+        },
+        "peak at right edge": {
+          "n": 28,
+          "value": 22,
+          "time": 23,
+          "threshold": 27,
+          "series": 21,
+          "all": 16,
+          "ci95": [
+            39.1,
+            73.5
+          ]
+        },
+        "high noise": {
+          "n": 26,
+          "value": 21,
+          "time": 25,
+          "threshold": 25,
+          "series": 19,
+          "all": 13,
+          "ci95": [
+            32.1,
+            67.9
+          ]
+        },
+        "range 1h": {
+          "n": 33,
+          "value": 22,
+          "time": 31,
+          "threshold": 31,
+          "series": 29,
+          "all": 18,
+          "ci95": [
+            38,
+            70.2
+          ]
+        },
+        "range 6h": {
+          "n": 36,
+          "value": 26,
+          "time": 34,
+          "threshold": 36,
+          "series": 27,
+          "all": 19,
+          "ci95": [
+            37,
+            68
+          ]
+        },
+        "range 24h": {
+          "n": 31,
+          "value": 23,
+          "time": 29,
+          "threshold": 29,
+          "series": 24,
+          "all": 17,
+          "ci95": [
+            37.8,
+            70.8
+          ]
+        }
+      },
+      "latencyMs": {
+        "p50": 18996,
+        "p95": 58504.75000000001,
+        "max": 81801
+      },
+      "attempts": {
+        "total": 175,
+        "ok": 168,
+        "rateLimited": 7,
+        "serverError": 0,
+        "networkOrTimeout": 0,
+        "other4xx": 0
+      },
+      "truncatedCalls": 0,
+      "cost": {
+        "meanPerCall": 0.0023723005,
+        "p95PerCall": 0.0055280125,
+        "maxPerCall": 0.007545950000000001,
+        "per1000": 2.3723005,
+        "total": 0.23723005000000003
+      },
+      "tokens": {
+        "promptMean": 645.077380952381,
+        "completionMean": 3214.75,
+        "completionP95": 7968.900000000003,
+        "reasoningTokensReported": 0,
+        "callsWithReasoningText": 168
+      },
+      "nonAnswersRun1": {},
+      "repeat": {
+        "panels": 34,
+        "sameVerdict": 29,
+        "sameFacts": 3,
+        "rightEveryRun": 16
+      },
+      "unitSlips": {
+        "run1": [],
+        "allRuns": 0
+      },
+      "claim": {
+        "run1Correct": 54,
+        "minCorrect": 90,
+        "meanCost": 0.0023723005,
+        "maxCost": 0.001,
+        "accuracyHolds": false,
+        "costHolds": false
+      }
+    },
+    "qwen3.8-max": {
+      "model": "qwen3.8-max",
+      "reasoning": "none returned",
+      "temperature": 0,
+      "maxTokens": 1024,
+      "calls": 303,
+      "runs": [
+        1,
+        2,
+        3
+      ],
+      "run1": {
+        "panels": 100,
+        "value": {
+          "correct": 77,
+          "of": 100,
+          "ci95": [
+            67.8,
+            84.2
+          ]
+        },
+        "time": {
+          "correct": 97,
+          "of": 100,
+          "ci95": [
+            91.5,
+            99
+          ]
+        },
+        "threshold": {
+          "correct": 97,
+          "of": 100,
+          "ci95": [
+            91.5,
+            99
+          ]
+        },
+        "series": {
+          "correct": 91,
+          "of": 100,
+          "ci95": [
+            83.8,
+            95.2
+          ]
+        },
+        "all": {
+          "correct": 65,
+          "of": 100,
+          "ci95": [
+            55.3,
+            73.6
+          ]
+        },
+        "valueWithin10": 87,
+        "valueWithin20": 94
+      },
+      "perRun": {
+        "1": {
+          "panels": 100,
+          "all": 65,
+          "subsetAll": 24,
+          "subsetPanels": 34
+        },
+        "2": {
+          "panels": 100,
+          "all": 64,
+          "subsetAll": 23,
+          "subsetPanels": 34
+        },
+        "3": {
+          "panels": 100,
+          "all": 62,
+          "subsetAll": 23,
+          "subsetPanels": 34
+        }
+      },
+      "nonAnswers": {
+        "unparseable": 2
+      },
+      "features": {
+        "all panels": {
+          "n": 100,
+          "value": 77,
+          "time": 97,
+          "threshold": 97,
+          "series": 91,
+          "all": 65,
+          "ci95": [
+            55.3,
+            73.6
+          ]
+        },
+        "log y-axis": {
+          "n": 25,
+          "value": 4,
+          "time": 24,
+          "threshold": 24,
+          "series": 23,
+          "all": 2,
+          "ci95": [
+            2.2,
+            25
+          ]
+        },
+        "stacked": {
+          "n": 19,
+          "value": 19,
+          "time": 19,
+          "threshold": 17,
+          "series": 14,
+          "all": 12,
+          "ci95": [
+            41,
+            80.9
+          ]
+        },
+        "4-5 series": {
+          "n": 36,
+          "value": 24,
+          "time": 35,
+          "threshold": 34,
+          "series": 34,
+          "all": 21,
+          "ci95": [
+            42.2,
+            72.9
+          ]
+        },
+        "1 series": {
+          "n": 17,
+          "value": 15,
+          "time": 17,
+          "threshold": 17,
+          "series": 17,
+          "all": 15,
+          "ci95": [
+            65.7,
+            96.7
+          ]
+        },
+        "small panel": {
+          "n": 19,
+          "value": 16,
+          "time": 17,
+          "threshold": 19,
+          "series": 16,
+          "all": 12,
+          "ci95": [
+            41,
+            80.9
+          ]
+        },
+        "similar colours": {
+          "n": 27,
+          "value": 21,
+          "time": 25,
+          "threshold": 26,
+          "series": 22,
+          "all": 15,
+          "ci95": [
+            37.3,
+            72.4
+          ]
+        },
+        "threshold shown": {
+          "n": 65,
+          "value": 50,
+          "time": 64,
+          "threshold": 62,
+          "series": 59,
+          "all": 42,
+          "ci95": [
+            52.5,
+            75.1
+          ]
+        },
+        "no threshold": {
+          "n": 35,
+          "value": 27,
+          "time": 33,
+          "threshold": 35,
+          "series": 32,
+          "all": 23,
+          "ci95": [
+            49.2,
+            79.2
+          ]
+        },
+        "peak at right edge": {
+          "n": 28,
+          "value": 24,
+          "time": 27,
+          "threshold": 28,
+          "series": 24,
+          "all": 20,
+          "ci95": [
+            52.9,
+            84.7
+          ]
+        },
+        "high noise": {
+          "n": 26,
+          "value": 22,
+          "time": 26,
+          "threshold": 24,
+          "series": 23,
+          "all": 18,
+          "ci95": [
+            50,
+            83.5
+          ]
+        },
+        "range 1h": {
+          "n": 33,
+          "value": 24,
+          "time": 32,
+          "threshold": 32,
+          "series": 33,
+          "all": 22,
+          "ci95": [
+            49.6,
+            80.2
+          ]
+        },
+        "range 6h": {
+          "n": 36,
+          "value": 28,
+          "time": 35,
+          "threshold": 35,
+          "series": 30,
+          "all": 23,
+          "ci95": [
+            47.6,
+            77.5
+          ]
+        },
+        "range 24h": {
+          "n": 31,
+          "value": 25,
+          "time": 30,
+          "threshold": 30,
+          "series": 28,
+          "all": 20,
+          "ci95": [
+            46.9,
+            78.9
+          ]
+        }
+      },
+      "latencyMs": {
+        "p50": 1479.5,
+        "p95": 2220.15,
+        "max": 9906
+      },
+      "attempts": {
+        "total": 399,
+        "ok": 300,
+        "rateLimited": 99,
+        "serverError": 0,
+        "networkOrTimeout": 0,
+        "other4xx": 0
+      },
+      "truncatedCalls": 1,
+      "cost": {
+        "meanPerCall": 0.00147086,
+        "p95PerCall": 0.0019487,
+        "maxPerCall": 0.0069492,
+        "per1000": 1.4708599999999998,
+        "total": 0.147086
+      },
+      "tokens": {
+        "promptMean": 594.16,
+        "completionMean": 119.70666666666666,
+        "completionP95": 140,
+        "reasoningTokensReported": 0,
+        "callsWithReasoningText": 0
+      },
+      "nonAnswersRun1": {},
+      "repeat": {
+        "panels": 100,
+        "sameVerdict": 97,
+        "sameFacts": 76,
+        "rightEveryRun": 62
+      },
+      "unitSlips": {
+        "run1": [
+          "p037"
+        ],
+        "allRuns": 3
+      }
+    },
+    "gemma-4-31B-it": {
+      "model": "gemma-4-31B-it",
+      "reasoning": "none returned",
+      "temperature": 0,
+      "maxTokens": 1024,
+      "calls": 301,
+      "runs": [
+        1,
+        2,
+        3
+      ],
+      "run1": {
+        "panels": 100,
+        "value": {
+          "correct": 77,
+          "of": 100,
+          "ci95": [
+            67.8,
+            84.2
+          ]
+        },
+        "time": {
+          "correct": 99,
+          "of": 100,
+          "ci95": [
+            94.6,
+            99.8
+          ]
+        },
+        "threshold": {
+          "correct": 96,
+          "of": 100,
+          "ci95": [
+            90.2,
+            98.4
+          ]
+        },
+        "series": {
+          "correct": 86,
+          "of": 100,
+          "ci95": [
+            77.9,
+            91.5
+          ]
+        },
+        "all": {
+          "correct": 64,
+          "of": 100,
+          "ci95": [
+            54.2,
+            72.7
+          ]
+        },
+        "valueWithin10": 93,
+        "valueWithin20": 97
+      },
+      "perRun": {
+        "1": {
+          "panels": 100,
+          "all": 64,
+          "subsetAll": 21,
+          "subsetPanels": 34
+        },
+        "2": {
+          "panels": 100,
+          "all": 62,
+          "subsetAll": 20,
+          "subsetPanels": 34
+        },
+        "3": {
+          "panels": 100,
+          "all": 63,
+          "subsetAll": 21,
+          "subsetPanels": 34
+        }
+      },
+      "nonAnswers": {},
+      "features": {
+        "all panels": {
+          "n": 100,
+          "value": 77,
+          "time": 99,
+          "threshold": 96,
+          "series": 86,
+          "all": 64,
+          "ci95": [
+            54.2,
+            72.7
+          ]
+        },
+        "log y-axis": {
+          "n": 25,
+          "value": 10,
+          "time": 24,
+          "threshold": 24,
+          "series": 21,
+          "all": 8,
+          "ci95": [
+            17.2,
+            51.6
+          ]
+        },
+        "stacked": {
+          "n": 19,
+          "value": 17,
+          "time": 19,
+          "threshold": 17,
+          "series": 15,
+          "all": 13,
+          "ci95": [
+            46,
+            84.6
+          ]
+        },
+        "4-5 series": {
+          "n": 36,
+          "value": 27,
+          "time": 36,
+          "threshold": 34,
+          "series": 29,
+          "all": 20,
+          "ci95": [
+            39.6,
+            70.5
+          ]
+        },
+        "1 series": {
+          "n": 17,
+          "value": 14,
+          "time": 17,
+          "threshold": 16,
+          "series": 17,
+          "all": 13,
+          "ci95": [
+            52.7,
+            90.4
+          ]
+        },
+        "small panel": {
+          "n": 19,
+          "value": 14,
+          "time": 18,
+          "threshold": 19,
+          "series": 16,
+          "all": 11,
+          "ci95": [
+            36.3,
+            76.9
+          ]
+        },
+        "similar colours": {
+          "n": 27,
+          "value": 21,
+          "time": 27,
+          "threshold": 26,
+          "series": 17,
+          "all": 13,
+          "ci95": [
+            30.7,
+            66
+          ]
+        },
+        "threshold shown": {
+          "n": 65,
+          "value": 49,
+          "time": 64,
+          "threshold": 61,
+          "series": 57,
+          "all": 41,
+          "ci95": [
+            50.9,
+            73.8
+          ]
+        },
+        "no threshold": {
+          "n": 35,
+          "value": 28,
+          "time": 35,
+          "threshold": 35,
+          "series": 29,
+          "all": 23,
+          "ci95": [
+            49.2,
+            79.2
+          ]
+        },
+        "peak at right edge": {
+          "n": 28,
+          "value": 18,
+          "time": 27,
+          "threshold": 28,
+          "series": 25,
+          "all": 16,
+          "ci95": [
+            39.1,
+            73.5
+          ]
+        },
+        "high noise": {
+          "n": 26,
+          "value": 19,
+          "time": 26,
+          "threshold": 24,
+          "series": 25,
+          "all": 17,
+          "ci95": [
+            46.2,
+            80.6
+          ]
+        },
+        "range 1h": {
+          "n": 33,
+          "value": 29,
+          "time": 33,
+          "threshold": 32,
+          "series": 26,
+          "all": 22,
+          "ci95": [
+            49.6,
+            80.2
+          ]
+        },
+        "range 6h": {
+          "n": 36,
+          "value": 24,
+          "time": 36,
+          "threshold": 35,
+          "series": 31,
+          "all": 20,
+          "ci95": [
+            39.6,
+            70.5
+          ]
+        },
+        "range 24h": {
+          "n": 31,
+          "value": 24,
+          "time": 30,
+          "threshold": 29,
+          "series": 29,
+          "all": 22,
+          "ci95": [
+            53.4,
+            83.9
+          ]
+        }
+      },
+      "latencyMs": {
+        "p50": 2736.5,
+        "p95": 3409.3500000000004,
+        "max": 6916
+      },
+      "attempts": {
+        "total": 375,
+        "ok": 300,
+        "rateLimited": 75,
+        "serverError": 0,
+        "networkOrTimeout": 0,
+        "other4xx": 0
+      },
+      "truncatedCalls": 0,
+      "cost": {
+        "meanPerCall": 0.00011276491999999999,
+        "p95PerCall": 0.000120385,
+        "maxPerCall": 0.00012486,
+        "per1000": 0.11276491999999999,
+        "total": 0.011276491999999999
+      },
+      "tokens": {
+        "promptMean": 604.04,
+        "completionMean": 101.31666666666666,
+        "completionP95": 115,
+        "reasoningTokensReported": 0,
+        "callsWithReasoningText": 0
+      },
+      "nonAnswersRun1": {},
+      "repeat": {
+        "panels": 100,
+        "sameVerdict": 98,
+        "sameFacts": 62,
+        "rightEveryRun": 62
+      },
+      "unitSlips": {
+        "run1": [],
+        "allRuns": 0
+      }
+    },
+    "llama-4-maverick": {
+      "model": "llama-4-maverick",
+      "reasoning": "none",
+      "temperature": 0,
+      "maxTokens": 1024,
+      "calls": 300,
+      "runs": [
+        1,
+        2,
+        3
+      ],
+      "run1": {
+        "panels": 100,
+        "value": {
+          "correct": 34,
+          "of": 100,
+          "ci95": [
+            25.5,
+            43.7
+          ]
+        },
+        "time": {
+          "correct": 89,
+          "of": 100,
+          "ci95": [
+            81.4,
+            93.7
+          ]
+        },
+        "threshold": {
+          "correct": 86,
+          "of": 100,
+          "ci95": [
+            77.9,
+            91.5
+          ]
+        },
+        "series": {
+          "correct": 81,
+          "of": 100,
+          "ci95": [
+            72.2,
+            87.5
+          ]
+        },
+        "all": {
+          "correct": 21,
+          "of": 100,
+          "ci95": [
+            14.2,
+            30
+          ]
+        },
+        "valueWithin10": 61,
+        "valueWithin20": 81
+      },
+      "perRun": {
+        "1": {
+          "panels": 100,
+          "all": 21,
+          "subsetAll": 6,
+          "subsetPanels": 34
+        },
+        "2": {
+          "panels": 100,
+          "all": 22,
+          "subsetAll": 7,
+          "subsetPanels": 34
+        },
+        "3": {
+          "panels": 100,
+          "all": 21,
+          "subsetAll": 6,
+          "subsetPanels": 34
+        }
+      },
+      "nonAnswers": {},
+      "features": {
+        "all panels": {
+          "n": 100,
+          "value": 34,
+          "time": 89,
+          "threshold": 86,
+          "series": 81,
+          "all": 21,
+          "ci95": [
+            14.2,
+            30
+          ]
+        },
+        "log y-axis": {
+          "n": 25,
+          "value": 3,
+          "time": 23,
+          "threshold": 17,
+          "series": 19,
+          "all": 1,
+          "ci95": [
+            0.7,
+            19.5
+          ]
+        },
+        "stacked": {
+          "n": 19,
+          "value": 7,
+          "time": 13,
+          "threshold": 16,
+          "series": 16,
+          "all": 3,
+          "ci95": [
+            5.5,
+            37.6
+          ]
+        },
+        "4-5 series": {
+          "n": 36,
+          "value": 9,
+          "time": 33,
+          "threshold": 30,
+          "series": 22,
+          "all": 3,
+          "ci95": [
+            2.9,
+            21.8
+          ]
+        },
+        "1 series": {
+          "n": 17,
+          "value": 7,
+          "time": 15,
+          "threshold": 16,
+          "series": 17,
+          "all": 6,
+          "ci95": [
+            17.3,
+            58.7
+          ]
+        },
+        "small panel": {
+          "n": 19,
+          "value": 5,
+          "time": 13,
+          "threshold": 16,
+          "series": 17,
+          "all": 3,
+          "ci95": [
+            5.5,
+            37.6
+          ]
+        },
+        "similar colours": {
+          "n": 27,
+          "value": 11,
+          "time": 26,
+          "threshold": 24,
+          "series": 17,
+          "all": 5,
+          "ci95": [
+            8.2,
+            36.7
+          ]
+        },
+        "threshold shown": {
+          "n": 65,
+          "value": 24,
+          "time": 57,
+          "threshold": 52,
+          "series": 52,
+          "all": 14,
+          "ci95": [
+            13.3,
+            33
+          ]
+        },
+        "no threshold": {
+          "n": 35,
+          "value": 10,
+          "time": 32,
+          "threshold": 34,
+          "series": 29,
+          "all": 7,
+          "ci95": [
+            10,
+            35.9
+          ]
+        },
+        "peak at right edge": {
+          "n": 28,
+          "value": 9,
+          "time": 21,
+          "threshold": 24,
+          "series": 25,
+          "all": 4,
+          "ci95": [
+            5.7,
+            31.5
+          ]
+        },
+        "high noise": {
+          "n": 26,
+          "value": 8,
+          "time": 23,
+          "threshold": 24,
+          "series": 21,
+          "all": 5,
+          "ci95": [
+            8.5,
+            37.9
+          ]
+        },
+        "range 1h": {
+          "n": 33,
+          "value": 12,
+          "time": 30,
+          "threshold": 28,
+          "series": 25,
+          "all": 6,
+          "ci95": [
+            8.6,
+            34.4
+          ]
+        },
+        "range 6h": {
+          "n": 36,
+          "value": 8,
+          "time": 32,
+          "threshold": 31,
+          "series": 31,
+          "all": 6,
+          "ci95": [
+            7.9,
+            31.9
+          ]
+        },
+        "range 24h": {
+          "n": 31,
+          "value": 14,
+          "time": 27,
+          "threshold": 27,
+          "series": 25,
+          "all": 9,
+          "ci95": [
+            16.1,
+            46.6
+          ]
+        }
+      },
+      "latencyMs": {
+        "p50": 2744.5,
+        "p95": 9089,
+        "max": 12284
+      },
+      "attempts": {
+        "total": 300,
+        "ok": 300,
+        "rateLimited": 0,
+        "serverError": 0,
+        "networkOrTimeout": 0,
+        "other4xx": 0
+      },
+      "truncatedCalls": 0,
+      "cost": {
+        "meanPerCall": 0.0002826329999999998,
+        "p95PerCall": 0.00035538,
+        "maxPerCall": 0.00036234000000000006,
+        "per1000": 0.2826329999999998,
+        "total": 0.02826329999999998
+      },
+      "tokens": {
+        "promptMean": 1096.2,
+        "completionMean": 72.10666666666667,
+        "completionP95": 86.15000000000003,
+        "reasoningTokensReported": 0,
+        "callsWithReasoningText": 0
+      },
+      "nonAnswersRun1": {},
+      "repeat": {
+        "panels": 100,
+        "sameVerdict": 99,
+        "sameFacts": 92,
+        "rightEveryRun": 21
+      },
+      "unitSlips": {
+        "run1": [],
+        "allRuns": 0
+      }
+    },
+    "nemotron-3.5-super-vl+reasoning-t0.6": {
+      "model": "nemotron-3.5-super-vl",
+      "reasoning": "on (default)",
+      "temperature": 0.6,
+      "maxTokens": 16384,
+      "calls": 34,
+      "runs": [
+        1
+      ],
+      "run1": {
+        "panels": 34,
+        "value": {
+          "correct": 24,
+          "of": 34,
+          "ci95": [
+            53.8,
+            83.2
+          ]
+        },
+        "time": {
+          "correct": 33,
+          "of": 34,
+          "ci95": [
+            85.1,
+            99.5
+          ]
+        },
+        "threshold": {
+          "correct": 32,
+          "of": 34,
+          "ci95": [
+            80.9,
+            98.4
+          ]
+        },
+        "series": {
+          "correct": 30,
+          "of": 34,
+          "ci95": [
+            73.4,
+            95.3
+          ]
+        },
+        "all": {
+          "correct": 19,
+          "of": 34,
+          "ci95": [
+            39.5,
+            71.1
+          ]
+        },
+        "valueWithin10": 28,
+        "valueWithin20": 29
+      },
+      "perRun": {
+        "1": {
+          "panels": 34,
+          "all": 19,
+          "subsetAll": 19,
+          "subsetPanels": 34
+        }
+      },
+      "nonAnswers": {},
+      "features": {
+        "all panels": {
+          "n": 34,
+          "value": 24,
+          "time": 33,
+          "threshold": 32,
+          "series": 30,
+          "all": 19,
+          "ci95": [
+            39.5,
+            71.1
+          ]
+        },
+        "log y-axis": {
+          "n": 8,
+          "value": 0,
+          "time": 7,
+          "threshold": 7,
+          "series": 8,
+          "all": 0,
+          "ci95": [
+            0,
+            32.4
+          ]
+        },
+        "stacked": {
+          "n": 6,
+          "value": 5,
+          "time": 6,
+          "threshold": 5,
+          "series": 4,
+          "all": 2,
+          "ci95": [
+            9.7,
+            70
+          ]
+        },
+        "4-5 series": {
+          "n": 9,
+          "value": 6,
+          "time": 9,
+          "threshold": 9,
+          "series": 8,
+          "all": 5,
+          "ci95": [
+            26.7,
+            81.1
+          ]
+        },
+        "1 series": {
+          "n": 6,
+          "value": 5,
+          "time": 6,
+          "threshold": 6,
+          "series": 6,
+          "all": 5,
+          "ci95": [
+            43.6,
+            97
+          ]
+        },
+        "small panel": {
+          "n": 5,
+          "value": 2,
+          "time": 4,
+          "threshold": 4,
+          "series": 3,
+          "all": 0,
+          "ci95": [
+            0,
+            43.4
+          ]
+        },
+        "similar colours": {
+          "n": 7,
+          "value": 6,
+          "time": 7,
+          "threshold": 6,
+          "series": 5,
+          "all": 3,
+          "ci95": [
+            15.8,
+            75
+          ]
+        },
+        "threshold shown": {
+          "n": 25,
+          "value": 19,
+          "time": 24,
+          "threshold": 23,
+          "series": 22,
+          "all": 15,
+          "ci95": [
+            40.7,
+            76.6
+          ]
+        },
+        "no threshold": {
+          "n": 9,
+          "value": 5,
+          "time": 9,
+          "threshold": 9,
+          "series": 8,
+          "all": 4,
+          "ci95": [
+            18.9,
+            73.3
+          ]
+        },
+        "peak at right edge": {
+          "n": 10,
+          "value": 7,
+          "time": 9,
+          "threshold": 9,
+          "series": 8,
+          "all": 5,
+          "ci95": [
+            23.7,
+            76.3
+          ]
+        },
+        "high noise": {
+          "n": 10,
+          "value": 7,
+          "time": 10,
+          "threshold": 10,
+          "series": 8,
+          "all": 5,
+          "ci95": [
+            23.7,
+            76.3
+          ]
+        },
+        "range 1h": {
+          "n": 9,
+          "value": 5,
+          "time": 9,
+          "threshold": 9,
+          "series": 8,
+          "all": 4,
+          "ci95": [
+            18.9,
+            73.3
+          ]
+        },
+        "range 6h": {
+          "n": 15,
+          "value": 11,
+          "time": 15,
+          "threshold": 15,
+          "series": 14,
+          "all": 10,
+          "ci95": [
+            41.7,
+            84.8
+          ]
+        },
+        "range 24h": {
+          "n": 10,
+          "value": 8,
+          "time": 9,
+          "threshold": 8,
+          "series": 8,
+          "all": 5,
+          "ci95": [
+            23.7,
+            76.3
+          ]
+        }
+      },
+      "latencyMs": {
+        "p50": 21234,
+        "p95": 39322.999999999985,
+        "max": 64226
+      },
+      "attempts": {
+        "total": 34,
+        "ok": 34,
+        "rateLimited": 0,
+        "serverError": 0,
+        "networkOrTimeout": 0,
+        "other4xx": 0
+      },
+      "truncatedCalls": 0,
+      "cost": {
+        "meanPerCall": 0.002006951470588235,
+        "p95PerCall": 0.003512137499999999,
+        "maxPerCall": 0.0056615,
+        "per1000": 2.006951470588235,
+        "total": 0.06823634999999999
+      },
+      "tokens": {
+        "promptMean": 635.0882352941177,
+        "completionMean": 2794.5,
+        "completionP95": 5124.749999999998,
+        "reasoningTokensReported": 0,
+        "callsWithReasoningText": 34
+      },
+      "nonAnswersRun1": {},
+      "unitSlips": {
+        "run1": [],
+        "allRuns": 0
+      }
+    }
+  },
+  "paired": [
+    {
+      "a": "nemotron-3.5-super-vl",
+      "b": "nemotron-3.5-super-vl+reasoning",
+      "aOnly": 8,
+      "bOnly": 14,
+      "p": 0.286
+    },
+    {
+      "a": "nemotron-3.5-super-vl",
+      "b": "qwen3.8-max",
+      "aOnly": 3,
+      "bOnly": 20,
+      "p": 0
+    },
+    {
+      "a": "nemotron-3.5-super-vl",
+      "b": "gemma-4-31B-it",
+      "aOnly": 8,
+      "bOnly": 24,
+      "p": 0.007
+    },
+    {
+      "a": "nemotron-3.5-super-vl",
+      "b": "llama-4-maverick",
+      "aOnly": 32,
+      "bOnly": 5,
+      "p": 0
+    },
+    {
+      "a": "nemotron-3.5-super-vl",
+      "b": "nemotron-3.5-super-vl+reasoning-t0.6",
+      "aOnly": 4,
+      "bOnly": 3,
+      "p": 1
+    },
+    {
+      "a": "nemotron-3.5-super-vl+reasoning",
+      "b": "qwen3.8-max",
+      "aOnly": 6,
+      "bOnly": 17,
+      "p": 0.035
+    },
+    {
+      "a": "nemotron-3.5-super-vl+reasoning",
+      "b": "gemma-4-31B-it",
+      "aOnly": 10,
+      "bOnly": 20,
+      "p": 0.099
+    },
+    {
+      "a": "nemotron-3.5-super-vl+reasoning",
+      "b": "llama-4-maverick",
+      "aOnly": 36,
+      "bOnly": 3,
+      "p": 0
+    },
+    {
+      "a": "nemotron-3.5-super-vl+reasoning",
+      "b": "nemotron-3.5-super-vl+reasoning-t0.6",
+      "aOnly": 2,
+      "bOnly": 1,
+      "p": 1
+    },
+    {
+      "a": "qwen3.8-max",
+      "b": "gemma-4-31B-it",
+      "aOnly": 14,
+      "bOnly": 13,
+      "p": 1
+    },
+    {
+      "a": "qwen3.8-max",
+      "b": "llama-4-maverick",
+      "aOnly": 49,
+      "bOnly": 5,
+      "p": 0
+    },
+    {
+      "a": "qwen3.8-max",
+      "b": "nemotron-3.5-super-vl+reasoning-t0.6",
+      "aOnly": 5,
+      "bOnly": 0,
+      "p": 0.063
+    },
+    {
+      "a": "gemma-4-31B-it",
+      "b": "llama-4-maverick",
+      "aOnly": 48,
+      "bOnly": 5,
+      "p": 0
+    },
+    {
+      "a": "gemma-4-31B-it",
+      "b": "nemotron-3.5-super-vl+reasoning-t0.6",
+      "aOnly": 3,
+      "bOnly": 1,
+      "p": 0.625
+    },
+    {
+      "a": "llama-4-maverick",
+      "b": "nemotron-3.5-super-vl+reasoning-t0.6",
+      "aOnly": 1,
+      "bOnly": 14,
+      "p": 0.001
+    }
+  ]
+}

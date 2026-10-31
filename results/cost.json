@@ -1,0 +1,134 @@
+{
+  "stamp": "47afe9459fbc1089",
+  "prices": "https://docs.digitalocean.com/products/inference/details/pricing/ (page says 'Last verified 30 Oct 2026'; read 2026-10-31). USD per 1M tokens, standard processing.",
+  "configs": {
+    "nemotron-3.5-super-vl": {
+      "model": "nemotron-3.5-super-vl",
+      "calls": 100,
+      "promptMean": 651.87,
+      "cachedMean": 0,
+      "completionMean": 96.77,
+      "imageTokensEst": 332.87,
+      "textOnlyPrompt": 319,
+      "inputShare": 0.7566349340230559,
+      "perScreenshot": 0.00025846150000000004,
+      "per1000": 0.25846150000000007,
+      "cachedMeanRunsAfter1": 0
+    },
+    "nemotron-3.5-super-vl+reasoning": {
+      "model": "nemotron-3.5-super-vl",
+      "calls": 100,
+      "promptMean": 651.87,
+      "cachedMean": 0,
+      "completionMean": 3348.83,
+      "imageTokensEst": 332.87,
+      "textOnlyPrompt": 319,
+      "inputShare": 0.08243517210403997,
+      "perScreenshot": 0.0023723005,
+      "per1000": 2.3723005,
+      "cachedMeanRunsAfter1": 0
+    },
+    "qwen3.8-max": {
+      "model": "qwen3.8-max",
+      "calls": 100,
+      "promptMean": 594.16,
+      "cachedMean": 262.4,
+      "completionMean": 125.81,
+      "imageTokensEst": 263.15999999999997,
+      "textOnlyPrompt": 331,
+      "inputShare": 0.4867900412003861,
+      "perScreenshot": 0.0014708599999999992,
+      "per1000": 1.4708599999999992,
+      "cachedMeanRunsAfter1": 531.2
+    },
+    "gemma-4-31B-it": {
+      "model": "gemma-4-31B-it",
+      "calls": 100,
+      "promptMean": 604.04,
+      "cachedMean": 325.12,
+      "completionMean": 101.71,
+      "imageTokensEst": 262.03999999999996,
+      "textOnlyPrompt": 342,
+      "inputShare": 0.549017549074659,
+      "perScreenshot": 0.0001127649200000001,
+      "per1000": 0.1127649200000001,
+      "cachedMeanRunsAfter1": 487.68
+    },
+    "llama-4-maverick": {
+      "model": "llama-4-maverick",
+      "calls": 100,
+      "promptMean": 1096.2,
+      "cachedMean": 270.72,
+      "completionMean": 72.1,
+      "imageTokensEst": 779.2,
+      "textOnlyPrompt": 317,
+      "inputShare": 0.7780620097440849,
+      "perScreenshot": 0.0002826329999999997,
+      "per1000": 0.2826329999999997,
+      "cachedMeanRunsAfter1": 1043.84
+    },
+    "nemotron-3.5-super-vl+reasoning-t0.6": {
+      "model": "nemotron-3.5-super-vl",
+      "calls": 34,
+      "promptMean": 635.0882352941177,
+      "cachedMean": 0,
+      "completionMean": 2794.5,
+      "imageTokensEst": 316.0882352941177,
+      "textOnlyPrompt": 319,
+      "inputShare": 0.09493327236875948,
+      "perScreenshot": 0.0020069514705882354,
+      "per1000": 2.0069514705882354,
+      "cachedMeanRunsAfter1": null
+    }
+  },
+  "imageTokensBySize": {
+    "nemotron-3.5-super-vl": {
+      "800x400": 327,
+      "420x230": 266,
+      "360x200": 288,
+      "1000x500": 514,
+      "600x320": 278,
+      "800x360": 302
+    },
+    "nemotron-3.5-super-vl+reasoning": {
+      "420x230": 266,
+      "360x200": 288,
+      "800x400": 327,
+      "1000x500": 514,
+      "600x320": 278,
+      "800x360": 302
+    },
+    "qwen3.8-max": {
+      "420x230": 93,
+      "360x200": 68,
+      "800x400": 302,
+      "1000x500": 498,
+      "800x360": 277,
+      "600x320": 192
+    },
+    "gemma-4-31B-it": {
+      "360x200": 266,
+      "800x400": 255,
+      "420x230": 266,
+      "1000x500": 255,
+      "600x320": 266,
+      "800x360": 266
+    },
+    "llama-4-maverick": {
+      "420x230": 437,
+      "800x400": 1017,
+      "360x200": 437,
+      "1000x500": 1017,
+      "800x360": 1017,
+      "600x320": 437
+    },
+    "nemotron-3.5-super-vl+reasoning-t0.6": {
+      "600x320": 278,
+      "1000x500": 514,
+      "360x200": 288,
+      "800x360": 302,
+      "800x400": 327,
+      "420x230": 266
+    }
+  }
+}

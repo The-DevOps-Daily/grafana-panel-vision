@@ -74,7 +74,9 @@ for (const f of files) {
   const ok = recs.filter((r) => r.ok);
   const lat = ok.map((r) => r.latencyMs);
   const attempts = recs.flatMap((r) => r.attempts);
-  const costs = ok.map((r) => callCost(r.model, r.usage));
+  // Priced on run 1 only: later runs resend the same image and some models
+  // serve it from the prompt cache (see scripts/04-cost.mjs).
+  const costs = ok.filter((r) => r.run === 1).map((r) => callCost(r.model, r.usage));
   const out = {
     model: cfg.model, reasoning: cfg.reasoning, temperature: cfg.temperature, maxTokens: cfg.maxTokens,
     calls: recs.length, runs,
@@ -108,6 +110,8 @@ for (const f of files) {
     },
   };
   for (const o of outcomes) if (o.kind !== 'answered') out.nonAnswers[o.kind] = (out.nonAnswers[o.kind] ?? 0) + 1;
+  out.nonAnswersRun1 = {};
+  for (const o of run1) if (o.kind !== 'answered') out.nonAnswersRun1[o.kind] = (out.nonAnswersRun1[o.kind] ?? 0) + 1;
   for (const field of FIELDS) {
     const k = run1.filter((o) => o.s[field]).length;
     out.run1[field] = { correct: k, of: run1.length, ci95: ci(k, run1.length) };
@@ -119,22 +123,37 @@ for (const f of files) {
     out.perRun[run].subsetAll = sub.filter((o) => o.s.all).length;
     out.perRun[run].subsetPanels = sub.length;
   }
-  // Run-to-run agreement on the subset: same all-four verdict in every run.
+  // Run-to-run agreement on every panel that has all runs: same all-four
+  // verdict, and the same four facts, in every run.
   if (runs.length > 1) {
-    const subsetIds = truths.filter((t) => inSubset(t.id)).map((t) => t.id);
     let same = 0;
     let sameAnswer = 0;
     let complete = 0;
-    for (const pid of subsetIds) {
+    let rightEveryRun = 0;
+    for (const pid of truths.map((t) => t.id)) {
       const os = runs.map((run) => outcomes.find((o) => o.r.panel === pid && o.r.run === run)).filter(Boolean);
       if (os.length !== runs.length) continue;
       complete++;
       if (os.every((o) => o.s.all === os[0].s.all)) same++;
       const key = (o) => JSON.stringify([o.s.detail.valueBase, o.r.answer?.peakTime, o.s.detail.threshold, o.s.detail.series]);
       if (os.every((o) => key(o) === key(os[0]))) sameAnswer++;
+      if (os.every((o) => o.s.all)) rightEveryRun++;
     }
-    out.repeat = { subsetPanels: complete, sameVerdict: same, sameFacts: sameAnswer };
+    out.repeat = { panels: complete, sameVerdict: same, sameFacts: sameAnswer, rightEveryRun };
   }
+  // Sensitivity of the value fact to the tolerance (the claim stays at 5%), and
+  // unit slips: a value right except for a factor of 1000 (or 1024 for bytes),
+  // such as "1.6 req/s" for 1.6K req/s.
+  const relErr = (o) => (o.s.detail.valueErr == null ? null : Math.abs(o.s.detail.valueErr));
+  out.run1.valueWithin10 = run1.filter((o) => relErr(o) != null && relErr(o) <= 0.1).length;
+  out.run1.valueWithin20 = run1.filter((o) => relErr(o) != null && relErr(o) <= 0.2).length;
+  const slip = (o) => {
+    const b = o.s.detail.valueBase;
+    if (b == null || o.s.value) return false;
+    const v = o.t.peak.value;
+    return [1000, 1 / 1000, 1024, 1 / 1024].some((f) => Math.abs(b * f - v) / v <= 0.05);
+  };
+  out.unitSlips = { run1: run1.filter(slip).map((o) => o.r.panel), allRuns: outcomes.filter(slip).length };
   for (const [name, pred] of FEATURES) {
     const rs = run1.filter((o) => pred(o.t));
     const row = { n: rs.length };
@@ -200,7 +219,7 @@ md.push(`# Results (stamp ${STAMP})`, '', `Tolerances: peak value within 5% (aft
 md.push('## Run 1, 100 panels', '', '| configuration | all four right | 95% CI | peak value | peak time | threshold | top series | non-answers | $ per 1,000 | p50 latency | p95 latency |', '|---|---|---|---|---|---|---|---|---|---|---|');
 for (const [id, o] of Object.entries(summary.configs)) {
   const r = o.run1;
-  const na = Object.entries(o.nonAnswers).filter(([, v]) => v).map(([k, v]) => `${k} ${v}`).join(', ') || '0';
+  const na = Object.entries(o.nonAnswersRun1).filter(([, v]) => v).map(([k, v]) => `${k} ${v}`).join(', ') || '0';
   md.push(`| ${id} | ${r.all.correct}/${r.all.of} | ${r.all.ci95[0]}-${r.all.ci95[1]}% | ${r.value.correct} | ${r.time.correct} | ${r.threshold.correct} | ${r.series.correct} | ${na} | ${o.cost.per1000.toFixed(3)} | ${(o.latencyMs.p50 / 1000).toFixed(1)} s | ${(o.latencyMs.p95 / 1000).toFixed(1)} s |`);
 }
 md.push('', 'Non-answers count as wrong in "all four right". Latency is the attempt that succeeded; retried attempts are counted below, not timed.', '');
@@ -219,12 +238,14 @@ for (const id of ids) {
   }
   md.push('');
 }
-md.push('## Repeat runs on the subset', '', '| configuration | runs | all four right per run (subset) | same verdict in every run | same facts in every run |', '|---|---|---|---|---|');
+md.push('## Repeat runs', '', 'Panels with every run recorded (all 100 for three full runs, the 34-panel subset otherwise).', '', '| configuration | runs | all four right per run | same verdict in every run | same four facts in every run | right in every run |', '|---|---|---|---|---|---|');
 for (const [id, o] of Object.entries(summary.configs)) {
   if (!o.repeat) continue;
-  md.push(`| ${id} | ${o.runs.join(', ')} | ${o.runs.map((r) => `${o.perRun[r].subsetAll}/${o.perRun[r].subsetPanels}`).join(', ')} | ${o.repeat.sameVerdict}/${o.repeat.subsetPanels} | ${o.repeat.sameFacts}/${o.repeat.subsetPanels} |`);
+  md.push(`| ${id} | ${o.runs.join(', ')} | ${o.runs.map((r) => `${o.perRun[r].all}/${o.perRun[r].panels}`).join(', ')} | ${o.repeat.sameVerdict}/${o.repeat.panels} | ${o.repeat.sameFacts}/${o.repeat.panels} | ${o.repeat.rightEveryRun}/${o.repeat.panels} |`);
 }
-md.push('', '## Calls, retries and tokens', '', '| configuration | calls | attempts | 429 | 5xx | network/timeout | other 4xx | truncated (finish=length) | mean prompt tokens | mean completion tokens | p95 completion | reasoning_tokens reported | calls with reasoning text | mean $ per call | max $ per call |', '|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|');
+md.push('', '## Peak value at looser tolerances, run 1 (sensitivity only; the claim uses 5%)', '', '| configuration | within 5% | within 10% | within 20% | unit slips (x1000 or x1024), run 1 |', '|---|---|---|---|---|');
+for (const [id, o] of Object.entries(summary.configs)) md.push(`| ${id} | ${o.run1.value.correct} | ${o.run1.valueWithin10} | ${o.run1.valueWithin20} | ${o.unitSlips.run1.length}${o.unitSlips.run1.length ? ` (${o.unitSlips.run1.join(', ')})` : ''} |`);
+md.push('', '## Calls, retries and tokens', '', 'Non-answers over all runs: ' + Object.entries(summary.configs).map(([id, o]) => `${id} ${Object.entries(o.nonAnswers).map(([k, v]) => `${k} ${v}`).join(', ') || '0'}`).join('; ') + '.', '', '| configuration | calls | attempts | 429 | 5xx | network/timeout | other 4xx | truncated (finish=length) | mean prompt tokens | mean completion tokens | p95 completion | reasoning_tokens reported | calls with reasoning text | mean $ per call | max $ per call |', '|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|');
 for (const [id, o] of Object.entries(summary.configs)) {
   const a = o.attempts;
   md.push(`| ${id} | ${o.calls} | ${a.total} | ${a.rateLimited} | ${a.serverError} | ${a.networkOrTimeout} | ${a.other4xx} | ${o.truncatedCalls} | ${o.tokens.promptMean.toFixed(0)} | ${o.tokens.completionMean.toFixed(0)} | ${o.tokens.completionP95.toFixed(0)} | ${o.tokens.reasoningTokensReported} | ${o.tokens.callsWithReasoningText} | ${o.cost.meanPerCall.toFixed(5)} | ${o.cost.maxPerCall.toFixed(5)} |`);

@@ -1,0 +1,2 @@
+byte labels in decimal GB, marked GiB: check exit 1 (caught); checked 100 panels from the drawn SVG; problems: 38
+lines drawn 3% above the data: check exit 1 (caught); checked 100 panels from the drawn SVG; problems: 204
