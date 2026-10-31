@@ -1,0 +1,20 @@
+Model access probe, 2026-10-31. Same question as stage 2. Text-only, then panels p001 (360x200) and p004 (1000x500).
+
+model | HTTP | text-only prompt tokens | +image tokens small | +image tokens large | accepts images | reply names the panel title (large)
+nemotron-3.5-super-vl | 200 | 319 | 288 | 514 | yes | yes
+nemotron-nano-12b-v2-vl | 200 | 536 | 771 | 771 | yes | yes
+nemotron-3-nano-omni | 200 | 331 | 289 | 515 | yes | yes
+qwen3.8-max | 200 | 331 | 68 | 498 | yes | yes
+qwen3.5-397b-a17b | 200 | 329 | 68 | 498 | yes | yes
+deepseek-v4.1-flash | 200 | 339 | 192 | 302 | yes | yes
+kimi-k3 | 200 | 400 | 113 | 658 | yes | yes
+kimi-k2.6 | 400 | - | - | - | no | - | {"error":{"message":"temperature must be 1 for this model","type":"invalid_reque
+glm-5.3-flash | 200 | 316 | 106 | 650 | yes | yes
+llama-4-maverick | 200 | 317 | 437 | 1017 | yes | yes
+gemma-4-31B-it | 200 | 342 | 266 | 255 | yes | yes
+mistral-3-14B | 200/400 | 308 | - | - | no | - | {"error":{"message":"model does not support image input","type":"invalid_request
+minimax-m3.1-flash | 200 | 474 | 93 | 650 | yes | yes
+openai-gpt-6-luna | 403 | - | - | - | no | - | {"error":{"message":"this model is not available for your subscription tier","ty
+openai-gpt-5.4-mini | 403 | - | - | - | no | - | {"error":{"message":"this model is not available for your subscription tier","ty
+
+Counted spend after the probe: $0.1447
