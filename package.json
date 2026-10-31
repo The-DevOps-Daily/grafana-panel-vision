@@ -1,0 +1,14 @@
+{
+  "name": "grafana-panel-vision",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Can a vision model read your Grafana panel? 100 Grafana-style panels with known ground truth, vision models on DigitalOcean Serverless Inference, and an on-call bot that cross-checks the model against the alert.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "2.6.2"
+  }
+}

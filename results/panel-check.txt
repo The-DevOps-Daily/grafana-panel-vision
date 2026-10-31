@@ -1,0 +1,2 @@
+checked 100 panels from the drawn SVG; problems: 0
+largest peak read-back error: p097 0.011%
