@@ -1,0 +1,84 @@
+{
+  "takenAt": "2026-11-02T09:13:23.889Z",
+  "source": "invoice 2026-10",
+  "updatedAt": null,
+  "lines": [
+    {
+      "model": "Llama 4 Maverick",
+      "kind": "Output",
+      "tokens": 37921,
+      "perThousand": 0.00087,
+      "amount": 0.03
+    },
+    {
+      "model": "Llama 4 Maverick",
+      "kind": "Input",
+      "tokens": 1305314,
+      "perThousand": 0.00025,
+      "amount": 0.33
+    },
+    {
+      "model": "Llama 4 Maverick",
+      "kind": "Cache Read Input",
+      "tokens": 2413248,
+      "perThousand": 0.00005,
+      "amount": 0.12
+    },
+    {
+      "model": "Qwen3.8-Max",
+      "kind": "Output",
+      "tokens": 78212,
+      "perThousand": 0.006,
+      "amount": 0.47
+    },
+    {
+      "model": "Qwen3.8-Max",
+      "kind": "Input",
+      "tokens": 463399,
+      "perThousand": 0.002,
+      "amount": 0.93
+    },
+    {
+      "model": "Qwen3.8-Max",
+      "kind": "Cache Read Input",
+      "tokens": 611712,
+      "perThousand": 0.0002,
+      "amount": 0.12
+    },
+    {
+      "model": "NVIDIA Nemotron 3.5 Super VL",
+      "kind": "Output",
+      "tokens": 692458,
+      "perThousand": 0.00065,
+      "amount": 0.45
+    },
+    {
+      "model": "NVIDIA Nemotron 3.5 Super VL",
+      "kind": "Input",
+      "tokens": 403676,
+      "perThousand": 0.0003,
+      "amount": 0.12
+    },
+    {
+      "model": "Gemma 4",
+      "kind": "Output",
+      "tokens": 30633,
+      "perThousand": 0.0005,
+      "amount": 0.02
+    },
+    {
+      "model": "Gemma 4",
+      "kind": "Input",
+      "tokens": 52422,
+      "perThousand": 0.00018,
+      "amount": 0.01
+    },
+    {
+      "model": "Gemma 4",
+      "kind": "Cache Read Input",
+      "tokens": 130368,
+      "perThousand": 0.000036,
+      "amount": 0.01
+    }
+  ]
+}

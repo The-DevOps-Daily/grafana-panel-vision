@@ -93,7 +93,7 @@ The whole test, including probes and the live demo, came to about $1.12 at list 
 - These are not real Grafana screenshots, and each panel has one clear peak and no legend values.
 - 100 panels give wide intervals. Each feature row covers 17 to 36 panels.
 - One prompt, no JSON response mode, temperature 0, the models DigitalOcean served on 31 October 2026.
-- Prices come from list prices and reported token counts. DigitalOcean lists no separate image rate for these models, so we assume the image tokens inside `prompt_tokens` are billed at the input rate. The bill check against the October 2026 invoice is pending: `results/billing-before.json` is the invoice preview before the runs (last updated 06:19 UTC on 31 October, before the first call at 09:15 UTC).
+- Prices come from list prices and reported token counts. DigitalOcean lists no separate image rate for these models, so we assume the image tokens inside `prompt_tokens` are billed at the input rate. The closed October 2026 invoice agrees with this (`results/bill-check.md`): for each tested model, the change in billed input, cached input and output tokens equals the totals the API reported for the 1,522 recorded calls. Each rate on the invoice is the list price (Nemotron had no cached tokens, so it has no cached-input line), and the invoice has no separate charge for images. `results/billing-before.json` is the invoice preview before the runs (last updated 06:19 UTC on 31 October, before the first call at 09:15 UTC), and `results/billing-after.json` is the closed October invoice.
 - Our account gets HTTP 403 for the GPT models on DigitalOcean, so only open-weight models are in the test (`results/model-access/2026-10-31.txt`).
 
 ## Write-up
